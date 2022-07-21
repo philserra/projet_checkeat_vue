@@ -8,7 +8,9 @@
     <p>{{ email }}</p>
     <p>{{ phone }}</p>
     <p>{{ password }}</p>
+    <button @click="deleteProfil">Supprimer</button>
   </div>
+  <p>{{ message }}</p>
 </template>
 
 <script>
@@ -21,6 +23,7 @@ export default {
       email: "",
       phone: "",
       password: "",
+      message: "",
     };
   },
   methods: {
@@ -45,6 +48,23 @@ export default {
       this.email = profil.email;
       this.phone = profil.phone;
       this.password = profil.password;
+    },
+    async deleteProfil() {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/restaurateurs/1",
+        options
+      );
+      const data = await response.json();
+
+      if (data.message == true) {
+        location = "http://localhost:8080/restaurateurs/delete";
+      }
     },
   },
 };

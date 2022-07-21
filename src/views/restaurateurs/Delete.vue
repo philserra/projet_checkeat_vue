@@ -1,5 +1,7 @@
 <template>
-  <h1>Hello</h1>
+  <h1>Votre profil à bien été supprimé</h1>
+
+  <button><a href="http://localhost:8080">Accueil</a></button>
 </template>
 
 <script>

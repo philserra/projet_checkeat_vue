@@ -136,7 +136,7 @@ export default {
       const data = await response.json();
       //   console.log(data.message);
       if (data.message == true) {
-        location = "http://localhost:8000/restaurateurs/success";
+        location = "http://localhost:8080/restaurateurs/success";
       }
     },
   },
