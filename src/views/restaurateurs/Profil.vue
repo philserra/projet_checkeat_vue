@@ -32,12 +32,13 @@ export default {
         },
       };
       const response = await fetch(
-        "http://127.0.0.1:8002/api/restaurateurs/28",
+        "http://127.0.0.1:8000/api/restaurateurs/1",
         options
       );
       const data = await response.json();
 
       const profil = data.restaurateur;
+
       this.lastname = profil.lastname;
       this.firstname = profil.firstname;
       this.siret = profil.siret;
