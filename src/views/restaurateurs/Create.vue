@@ -1,9 +1,11 @@
 <template>
+  <!-- Formulaire Inscription Restaurateur -->
   <div class="register">
     <h2 class="titleRegister">Veuillez-vous inscrire sur cette page</h2>
 
     <div class="wrapper">
       <div id="mainContainer" class="mainContainer">
+        <!-- <button @click="accueil()">Page principale</button> -->
         <form @submit.prevent="register">
           <div class="input-container">
             <label for="lastname"></label>
@@ -95,6 +97,8 @@ export default {
   name: "Create",
   components: {},
 
+  // Déclaration de la DATA qui sera envoyée en requête sur la BDD
+
   data() {
     return {
       lastname: "",
@@ -123,6 +127,8 @@ export default {
           password: this.password,
         }),
       };
+
+      // FETCH pour envoyé la requête sur l'API
 
       const response = await fetch(
         "http://127.0.0.1:8000/api/restaurateurs/create",
