@@ -7,6 +7,7 @@ import EditSuccess from "../views/restaurateurs/EditSuccess.vue";
 import Create from "../views/restaurateurs/Create.vue";
 import Dashboard from "../views/restaurateurs/Dashboard.vue";
 import Profil from "../views/restaurateurs/Profil.vue";
+import Connexion from "../views/restaurateurs/Connexion.vue";
 
 const routes = [
   {
@@ -58,6 +59,11 @@ const routes = [
     path: "/restaurateurs/profil",
     name: "profil",
     component: Profil,
+  },
+  {
+    path: "/restaurateurs/connexion",
+    name: "connexion",
+    component: Connexion,
   },
 ];
 
