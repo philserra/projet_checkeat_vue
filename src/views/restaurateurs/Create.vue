@@ -80,16 +80,13 @@
           </div>
 
           <div class="boxButton">
-            <input
-              class="register-button2"
-              type="submit"
-              value="Valider Inscription"
-            />
+            <input type="submit" value="Valider Inscription" />
           </div>
         </form>
       </div>
     </div>
   </div>
+  <p>{{ message }}</p>
 </template>
 
 <script>
@@ -107,6 +104,7 @@ export default {
       email: "",
       phone: "",
       password: "",
+      message: "",
     };
   },
 
@@ -131,11 +129,15 @@ export default {
       // FETCH pour envoyé la requête sur l'API
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/create",
+        "http://127.0.0.1:8002/api/restaurateurs",
         options
       );
 
       const data = await response.json();
+      //   console.log(data.message);
+      if (data.message == true) {
+        this.message = "Profil crée";
+      }
     },
   },
 };
