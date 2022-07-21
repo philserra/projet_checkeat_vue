@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <!-- Formulaire Inscription Restaurateur -->
   <div class="register">
     <h2 class="titleRegister">Veuillez-vous inscrire sur cette page</h2>
@@ -92,16 +91,12 @@
       </div>
     </div>
   </div>
-=======
-  <h1>Accueil</h1>
->>>>>>> b7250f759ae7e401c3f3092b654d49cb51a98011
 </template>
 
 <script>
 export default {
   name: "HomeView",
   components: {},
-<<<<<<< HEAD
 
   // Déclaration de la DATA qui sera envoyée en requête sur la BDD
 
@@ -144,7 +139,5 @@ export default {
       const data = await response.json();
     },
   },
-=======
->>>>>>> b7250f759ae7e401c3f3092b654d49cb51a98011
 };
 </script>
