@@ -9,6 +9,8 @@
     <p>{{ phone }}</p>
     <p>{{ password }}</p>
   </div>
+
+  <button @click="editProfil()">Modifier</button>
 </template>
 
 <script>
@@ -45,6 +47,9 @@ export default {
       this.email = profil.email;
       this.phone = profil.phone;
       this.password = profil.password;
+    },
+    editProfil() {
+      location = "http://localhost:8080/restaurateurs/edit";
     },
   },
 };
