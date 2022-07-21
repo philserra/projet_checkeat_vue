@@ -136,7 +136,7 @@ export default {
       const data = await response.json();
       //   console.log(data.message);
       if (data.message == true) {
-        this.message = "Profil crée";
+        location = "http://localhost:8082/restaurateurs/success";
       }
     },
   },

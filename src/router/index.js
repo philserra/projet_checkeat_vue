@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Show from "../views/restaurateurs/Show.vue";
+import Success from "../views/restaurateurs/Success.vue";
 import Edit from "../views/restaurateurs/Edit.vue";
 import Delete from "../views/restaurateurs/Delete.vue";
 import EditSuccess from "../views/restaurateurs/EditSuccess.vue";
 import Create from "../views/restaurateurs/Create.vue";
+import Dashboard from "../views/restaurateurs/Dashboard.vue";
+import Profil from "../views/restaurateurs/Profil.vue";
 
 const routes = [
   {
@@ -22,9 +24,9 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/restaurateurs/show",
-    name: "show",
-    component: Show,
+    path: "/restaurateurs/success",
+    name: "success",
+    component: Success,
   },
   {
     path: "/restaurateurs/delete",
@@ -46,6 +48,16 @@ const routes = [
     path: "/restaurateurs/create",
     name: "create",
     component: Create,
+  },
+  {
+    path: "/restaurateurs/dashboard",
+    name: "dashboard",
+    component: Dashboard,
+  },
+  {
+    path: "/restaurateurs/profil",
+    name: "profil",
+    component: Profil,
   },
 ];
 
