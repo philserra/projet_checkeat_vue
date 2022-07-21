@@ -1,9 +1,10 @@
 <template>
+  <!-- Formulaire Inscription Restaurateur -->
   <div class="register">
     <h2 class="titleRegister">Veuillez-vous inscrire sur cette page</h2>
 
     <div class="wrapper">
-      <button @click="accueil()">Page principale</button>
+      <!-- <button @click="accueil()">Page principale</button> -->
 
       <div id="mainContainer" class="mainContainer">
         <form @submit.prevent="register">
@@ -97,6 +98,8 @@ export default {
   name: "HomeView",
   components: {},
 
+  // Déclaration de la DATA qui sera envoyée en requête sur la BDD
+
   data() {
     return {
       lastname: "",
@@ -126,6 +129,8 @@ export default {
         }),
       };
 
+      // FETCH pour envoyé la requête sur l'API
+
       const response = await fetch(
         "http://127.0.0.1:8000/api/restaurateurs",
         options
@@ -133,9 +138,6 @@ export default {
 
       const data = await response.json();
     },
-  },
-  accueil() {
-    this.$router.push({ name: "Welcome" });
   },
 };
 </script>
