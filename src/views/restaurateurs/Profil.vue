@@ -11,6 +11,8 @@
     <button @click="deleteProfil">Supprimer</button>
   </div>
   <p>{{ message }}</p>
+
+  <button @click="editProfil()">Modifier</button>
 </template>
 
 <script>
@@ -66,8 +68,10 @@ export default {
         location = "http://localhost:8080/restaurateurs/delete";
       }
     },
+    editProfil() {
+      location = "http://localhost:8080/restaurateurs/edit";
+    },
   },
 };
 </script>
-
 <style></style>
