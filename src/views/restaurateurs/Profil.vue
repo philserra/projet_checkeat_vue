@@ -1,6 +1,6 @@
 <template>
   <h1>Profil</h1>
-  <button @click="getProfil">Afficher</button>
+
   <div>
     <p>{{ lastname }}</p>
     <p>{{ firstname }}</p>
@@ -29,17 +29,29 @@ export default {
       message: "",
     };
   },
-  methods: {
-    async getProfil() {
-      const profil = await getProfil({ id: 1 });
+  async mounted() {
+    const profil = await getProfil({ id: 1 });
 
-      this.lastname = profil.lastname;
-      this.firstname = profil.firstname;
-      this.siret = profil.siret;
-      this.email = profil.email;
-      this.phone = profil.phone;
-      this.password = profil.password;
+    this.lastname = profil.lastname;
+    this.firstname = profil.firstname;
+    this.siret = profil.siret;
+    this.email = profil.email;
+    this.phone = profil.phone;
+    this.password = profil.password;
+  },
+  methods: {
+    async editProfil() {
+      await editProfil({
+        id: 1,
+        lastname: this.lastname,
+        firstname: this.firstname,
+        siret: this.siret,
+        email: this.email,
+        phone: this.phone,
+        password: this.password,
+      });
     },
+
     async deleteProfil() {
       const options = {
         method: "DELETE",
