@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import { getProfil, editProfil } from "@/lib/profil";
 export default {
   data() {
     return {
@@ -100,27 +101,27 @@ export default {
       password: "",
     };
   },
+  async mounted() {
+    const profil = await getProfil({ id: 1 });
+
+    this.lastname = profil.lastname;
+    this.firstname = profil.firstname;
+    this.siret = profil.siret;
+    this.email = profil.email;
+    this.phone = profil.phone;
+    this.password = profil.password;
+  },
   methods: {
     async editProfil() {
-      const options = {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          lastname: this.lastname,
-          firstname: this.firstname,
-          siret: this.siret,
-          email: this.email,
-          phone: this.phone,
-          password: this.password,
-        }),
-      };
-      const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/1",
-        options
-      );
-      const data = await response.json();
+      await editProfil({
+        id: 1,
+        lastname: this.lastname,
+        firstname: this.firstname,
+        siret: this.siret,
+        email: this.email,
+        phone: this.phone,
+        password: this.password,
+      });
     },
   },
 };

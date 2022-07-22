@@ -8,6 +8,7 @@ import Create from "../views/restaurateurs/Create.vue";
 import Dashboard from "../views/restaurateurs/Dashboard.vue";
 import Profil from "../views/restaurateurs/Profil.vue";
 import Connexion from "../views/restaurateurs/Connexion.vue";
+import CreateResto from "../views/restaurants/CreateResto.vue";
 
 const routes = [
   {
@@ -24,11 +25,14 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+
+  // Restaurateurs
   {
     path: "/restaurateurs/success",
     name: "success",
     component: Success,
   },
+
   {
     path: "/restaurateurs/delete",
     name: "delete",
@@ -64,6 +68,14 @@ const routes = [
     path: "/restaurateurs/connexion",
     name: "connexion",
     component: Connexion,
+  },
+
+  // Restaurants
+
+  {
+    path: "/restaurants/create",
+    name: "createResto",
+    component: CreateResto,
   },
 ];
 

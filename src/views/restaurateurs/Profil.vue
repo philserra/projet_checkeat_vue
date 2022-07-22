@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { getProfil } from "@/lib/profil";
 export default {
   data() {
     return {
@@ -30,19 +31,7 @@ export default {
   },
   methods: {
     async getProfil() {
-      const options = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/1",
-        options
-      );
-      const data = await response.json();
-
-      const profil = data.restaurateur;
+      const profil = await getProfil({ id: 1 });
 
       this.lastname = profil.lastname;
       this.firstname = profil.firstname;
