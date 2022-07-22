@@ -1,5 +1,9 @@
 <template>
-  <h1>Accueil</h1>
+  <div
+    class="screen min-h-screen flex-col flex items-center justify-center bg-gray-500"
+  >
+    <h1 class="font-bold text-red-600 text-6xl">Check'EAT</h1>
+  </div>
 </template>
 
 <script>
