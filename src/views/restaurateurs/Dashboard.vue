@@ -13,7 +13,7 @@
     <p>{{ timetable }}</p>
     <p>{{ capacity }}</p>
 
-    <button @click="deleteProfil">Supprimer</button>
+    <!-- <button @click="deleteProfil">Supprimer</button> -->
 
     <div></div>
 
@@ -41,7 +41,22 @@ export default {
     };
   },
   async mounted() {
-    const restaurant = await getRestaurant({ id: 1 });
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
+
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/restaurants/1",
+      options
+    );
+
+    const data = await response.json();
+
+    const restaurant = data.restaurant;
 
     this.name = restaurant.lastname;
     this.adress = restaurant.adress;

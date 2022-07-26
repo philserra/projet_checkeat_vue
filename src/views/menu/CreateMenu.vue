@@ -65,17 +65,20 @@
   </div>
   <br /><br /><br /><br />
   <h2>Liste des plats</h2>
-  <ul>
-    <li v-for="task in tasks" :key="task.id">
-      <p>Nom du plat : {{ task.name }}</p>
-      <p>Catégorie : {{ task.category }}</p>
-      <p>Prix HT : {{ task.priceHt }}</p>
-      <p>TVA : {{ task.tva }}</p>
-      <p>Prix TTC : {{ task.priceTtc }}</p>
-      <button @click="deleteProfil">Supprimer</button>
-      <br /><br /><br />
-    </li>
-  </ul>
+  <br /><br />
+  <div class="list">
+    <ul>
+      <li v-for="task in tasks" :key="task.id">
+        <p>Nom du plat : {{ task.name }}</p>
+        <p>Catégorie : {{ task.category }}</p>
+        <p>Prix HT : {{ task.priceHt }}</p>
+        <p>TVA : {{ task.tva }}</p>
+        <p>Prix TTC : {{ task.priceTtc }}</p>
+        <button @click="deleteProfil">Supprimer</button>
+        <br /><br /><br />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -148,6 +151,22 @@ export default {
         location = "http://localhost:8080/menu/menudelete";
       }
     },
+
+    async display() {
+      const options = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+        response = await fetch("http://127.0.0.1:8000/api/menu", options);
+
+      const data = await response.json();
+
+      this.tasks = data.liste;
+    },
   },
 };
 </script>
+
+<style></style>

@@ -98,7 +98,7 @@
               class="capacityRegister"
               id="capacity"
               v-model="capacity"
-              placeholder="Numéro de table"
+              placeholder="Capacité du restaurant"
               required
             />
           </div>
@@ -185,7 +185,7 @@ export default {
         options
       );
 
-      // const data = await response.json();
+      const data = await response.json();
       // //   console.log(data.message);
       // if (data.message == true) {
       //   location = "http://localhost:8080/restaurants/success";
