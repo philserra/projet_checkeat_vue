@@ -1,5 +1,5 @@
 <template>
-  <h1>Votre menu a bien été ajouté</h1>
+  <h1>Votre menu a bien été supprimé</h1>
   <button @click="getDashboard()">Tableau de bord</button>
 </template>
 
