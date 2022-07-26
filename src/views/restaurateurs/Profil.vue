@@ -2,6 +2,7 @@
   <h1>Profil</h1>
 
   <div>
+    <p>{{ id }}</p>
     <p>{{ lastname }}</p>
     <p>{{ firstname }}</p>
     <p>{{ siret }}</p>
@@ -20,6 +21,7 @@ import { getProfil } from "@/lib/profil";
 export default {
   data() {
     return {
+      id: "",
       lastname: "",
       firstname: "",
       siret: "",

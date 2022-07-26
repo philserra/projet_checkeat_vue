@@ -105,14 +105,18 @@
 
           <div class="input-container">
             <label for="id_restaurateur"></label>
-            <input
-              type="number"
-              class="id_restaurateurRegister"
+
+            <select
+              v-model="selected"
+              name="id_restaurateur"
               id="id_restaurateur"
-              v-model="id_restaurateur"
-              placeholder="id-restaurateur"
-              required
-            />
+            >
+              <option value="">Aucun</option>
+              <option>1</option>
+              <!-- <option>
+                {{ id_restaurateur }}
+              </option> -->
+            </select>
           </div>
 
           <div class="boxButton">
@@ -122,10 +126,11 @@
       </div>
     </div>
   </div>
-  <p>{{ message }}</p>
+  <!-- <div v-if="message === true">{{ message }}</div> -->
 </template>
 
 <script>
+import { getProfil } from "@/lib/profil";
 export default {
   name: "Create",
   components: {},
@@ -142,9 +147,16 @@ export default {
       email: "",
       timetable: "",
       capacity: "",
-      id_restaurateur: "",
+      id_restaurateur: 1,
+      selected: "",
     };
   },
+
+  // async mounted() {
+  //   const profil = await getProfil({ id: 1 });
+
+  //   this.id_restaurateur = profil.id;
+  // },
 
   methods: {
     async register() {
@@ -174,11 +186,11 @@ export default {
         options
       );
 
-      const data = await response.json();
-      //   console.log(data.message);
-      if (data.message == true) {
-        location = "http://localhost:8080/restaurants/success";
-      }
+      // const data = await response.json();
+      // //   console.log(data.message);
+      // if (data.message == true) {
+      //   location = "http://localhost:8080/restaurants/success";
+      // }
     },
   },
 };
