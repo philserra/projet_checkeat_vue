@@ -130,7 +130,6 @@
 </template>
 
 <script>
-import { getProfil } from "@/lib/profil";
 export default {
   name: "Create",
   components: {},

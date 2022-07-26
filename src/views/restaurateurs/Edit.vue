@@ -79,17 +79,15 @@
           </div>
 
           <div class="boxButton">
-            <input type="submit" value="Modifier" />
+            <input type="submit" value="Valider modifications" />
           </div>
         </form>
       </div>
     </div>
   </div>
-  <!-- <p>{{ message }}</p> -->
 </template>
 
 <script>
-import { getProfil, editProfil } from "@/lib/profil";
 export default {
   data() {
     return {
@@ -101,8 +99,24 @@ export default {
       password: "",
     };
   },
+
   async mounted() {
-    const profil = await getProfil({ id: 1 });
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
+
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/restaurateurs/1",
+      options
+    );
+
+    const data = await response.json();
+
+    const profil = data.restaurateur;
 
     this.lastname = profil.lastname;
     this.firstname = profil.firstname;
@@ -110,18 +124,39 @@ export default {
     this.email = profil.email;
     this.phone = profil.phone;
     this.password = profil.password;
+
+    console.log(data.restaurateur);
+
+    // return data.restaurateur;
   },
+
   methods: {
     async editProfil() {
-      await editProfil({
-        id: 1,
-        lastname: this.lastname,
-        firstname: this.firstname,
-        siret: this.siret,
-        email: this.email,
-        phone: this.phone,
-        password: this.password,
-      });
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          lastname: this.lastname,
+          firstname: this.firstname,
+          siret: this.siret,
+          email: this.email,
+          phone: this.phone,
+          password: this.password,
+        }),
+      };
+
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/restaurateurs/1",
+        options
+      );
+
+      const data = await response.json();
+
+      console.log(data.restaurateur);
+      // return profil;
     },
   },
 };
