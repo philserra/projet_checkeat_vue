@@ -133,7 +133,7 @@
 </template>
 
 <script>
-const token = localStorage.getItem("token");
+// const token = localStorage.getItem("token");
 export default {
   name: "Create",
   components: {},
@@ -174,9 +174,9 @@ export default {
 
     this.liste = data.restaurants;
 
-    data.restaurants.forEach((element) => {
-      this.id_restaurateur = element.id_restaurateur;
-    });
+    // data.restaurants.forEach((element) => {
+    //   this.id_restaurateur = element.id_restaurateur;
+    // });
 
     // this.id_restaurateur = profil.id_restaurateur;
   },
@@ -188,7 +188,6 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           name: this.name,

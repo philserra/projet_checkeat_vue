@@ -36,11 +36,12 @@ export default {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/1",
+      "http://127.0.0.1:8000/api/restaurateurs/profile",
       options
     );
 
@@ -63,11 +64,12 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/1",
+        "http://127.0.0.1:8000/api/restaurateurs/delete",
         options
       );
 

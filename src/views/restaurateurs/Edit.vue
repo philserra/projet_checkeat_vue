@@ -106,11 +106,12 @@ export default {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/1",
+      "http://127.0.0.1:8000/api/restaurateurs/profile",
       options
     );
 
@@ -125,8 +126,7 @@ export default {
     this.phone = profil.phone;
     this.password = profil.password;
 
-    console.log(data.restaurateur);
-
+    // console.log(data.restaurateur);
     // return data.restaurateur;
   },
 
@@ -149,13 +149,13 @@ export default {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/1",
+        "http://127.0.0.1:8000/api/restaurateurs",
         options
       );
 
       const data = await response.json();
 
-      console.log(data.restaurateur);
+      // console.log(data.restaurateur);
       // return profil;
     },
   },
