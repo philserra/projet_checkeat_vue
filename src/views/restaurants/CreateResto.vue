@@ -60,8 +60,8 @@
             <input
               type="text"
               class="phoneRegister"
-              id="phone"
-              v-model="phone"
+              id="tel"
+              v-model="tel"
               placeholder="Téléphone"
               required
             />
@@ -98,25 +98,28 @@
               class="capacityRegister"
               id="capacity"
               v-model="capacity"
-              placeholder="Numéro de table"
+              placeholder="Capacité"
               required
             />
           </div>
 
           <div class="input-container">
-            <label for="id_restaurateur"></label>
+            <!-- <label for="id_restaurateur"></label>
+            <div v-for="elem in liste" :key="elem">
+              <input type="number" :value="elem.id_restaurateur[1]" />
+            </div> -->
 
-            <select
+            <!-- <select
               v-model="selected"
               name="id_restaurateur"
               id="id_restaurateur"
             >
               <option value="">Aucun</option>
               <option>1</option>
-              <!-- <option>
+              <option>
                 {{ id_restaurateur }}
-              </option> -->
-            </select>
+              </option>
+            </select> -->
           </div>
 
           <div class="boxButton">
@@ -126,10 +129,11 @@
       </div>
     </div>
   </div>
-  <!-- <div v-if="message === true">{{ message }}</div> -->
+  <div v-if="message === true">{{ message }}</div>
 </template>
 
 <script>
+const token = localStorage.getItem("token");
 export default {
   name: "Create",
   components: {},
@@ -142,20 +146,40 @@ export default {
       adress: "",
       zip: "",
       city: "",
-      phone: "",
+      tel: "",
       email: "",
       timetable: "",
       capacity: "",
-      id_restaurateur: 1,
-      selected: "",
+      id_restaurateur: "",
+      message: "",
+      liste: [],
     };
   },
 
-  // async mounted() {
-  //   const profil = await getProfil({ id: 1 });
+  async mounted() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
 
-  //   this.id_restaurateur = profil.id;
-  // },
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/restaurants/",
+      options
+    );
+
+    const data = await response.json();
+
+    this.liste = data.restaurants;
+
+    data.restaurants.forEach((element) => {
+      this.id_restaurateur = element.id_restaurateur;
+    });
+
+    // this.id_restaurateur = profil.id_restaurateur;
+  },
 
   methods: {
     async register() {
@@ -164,13 +188,14 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           name: this.name,
           adress: this.adress,
           zip: this.zip,
           city: this.city,
-          phone: this.phone,
+          tel: this.tel,
           email: this.email,
           timetable: this.timetable,
           capacity: this.capacity,
@@ -185,11 +210,11 @@ export default {
         options
       );
 
-      // const data = await response.json();
-      // //   console.log(data.message);
-      // if (data.message == true) {
-      //   location = "http://localhost:8080/restaurants/success";
-      // }
+      const data = await response.json();
+      //   console.log(data.message);
+      if (data.message == true) {
+        location = "http://localhost:8080/restaurants/success";
+      }
     },
   },
 };
