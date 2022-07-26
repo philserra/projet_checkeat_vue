@@ -9,6 +9,8 @@ import Dashboard from "../views/restaurateurs/Dashboard.vue";
 import Profil from "../views/restaurateurs/Profil.vue";
 import Connexion from "../views/restaurateurs/Connexion.vue";
 import CreateResto from "../views/restaurants/CreateResto.vue";
+import CreateMenu from "../views/menu/CreateMenu.vue";
+import MenuSuccess from "../views/menu/MenuSuccess.vue";
 
 const routes = [
   {
@@ -76,6 +78,20 @@ const routes = [
     path: "/restaurants/create",
     name: "createResto",
     component: CreateResto,
+  },
+
+  // Menu
+
+  {
+    path: "/menu/create",
+    name: "createMenu",
+    component: CreateMenu,
+  },
+
+  {
+    path: "/menu/menusuccess",
+    name: "menuSuccess",
+    component: MenuSuccess,
   },
 ];
 

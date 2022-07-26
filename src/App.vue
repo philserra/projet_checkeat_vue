@@ -4,7 +4,8 @@
   >
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/menu/create">Menu</router-link>
     </nav>
     <nav>
       <router-link to="/restaurateurs/create">Inscription</router-link> |
