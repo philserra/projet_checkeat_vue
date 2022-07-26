@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { getRestaurant } from "@/lib/profil";
 export default {
   data() {
     return {
