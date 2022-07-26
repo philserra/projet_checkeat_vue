@@ -41,7 +41,7 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/profile",
+      "http://127.0.0.1:8000/api/restaurateurs",
       options
     );
 
@@ -69,18 +69,18 @@ export default {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs/delete",
+        "http://127.0.0.1:8000/api/restaurateurs",
         options
       );
 
       const data = await response.json();
 
       if (data.message == true) {
-        location = "http://localhost:8080/restaurateurs/delete";
+        this.$router.push("/restaurateurs/delete");
       }
     },
     editProfil() {
-      location = "http://localhost:8080/restaurateurs/edit";
+      this.$router.push("/restaurateurs/edit");
     },
   },
 };

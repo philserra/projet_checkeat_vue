@@ -152,7 +152,7 @@ export default {
       capacity: "",
       id_restaurateur: "",
       message: "",
-      liste: [],
+      // liste: [],
     };
   },
 
@@ -162,17 +162,20 @@ export default {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurants/",
+      "http://127.0.0.1:8000/api/restaurateurs/profile",
       options
     );
 
     const data = await response.json();
 
-    this.liste = data.restaurants;
+    console.log(data);
+
+    // this.liste = data.restaurants;
 
     // data.restaurants.forEach((element) => {
     //   this.id_restaurateur = element.id_restaurateur;
@@ -188,6 +191,7 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({
           name: this.name,

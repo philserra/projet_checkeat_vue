@@ -111,11 +111,13 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/profile",
+      "http://127.0.0.1:8000/api/restaurateurs",
       options
     );
 
     const data = await response.json();
+
+    console.log(data);
 
     const profil = data.restaurateur;
 
@@ -137,6 +139,7 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({
           lastname: this.lastname,
@@ -154,6 +157,8 @@ export default {
       );
 
       const data = await response.json();
+
+      this.$router.push("/restaurateurs/editsuccess");
 
       // console.log(data.restaurateur);
       // return profil;

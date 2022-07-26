@@ -40,25 +40,28 @@ export default {
       capacity: "",
     };
   },
-  async mounted() {
+  async getResto() {
     const options = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurants/1",
+      "http://127.0.0.1:8000/api/restaurants",
       options
     );
 
     const data = await response.json();
 
+    console.log(data);
+
     const restaurant = data.restaurant;
 
-    this.name = restaurant.lastname;
+    this.name = restaurant.name;
     this.adress = restaurant.adress;
     this.zip = restaurant.zip;
     this.city = restaurant.city;
