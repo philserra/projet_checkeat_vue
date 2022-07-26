@@ -11,6 +11,7 @@ import Connexion from "../views/restaurateurs/Connexion.vue";
 import CreateResto from "../views/restaurants/CreateResto.vue";
 import CreateMenu from "../views/menu/CreateMenu.vue";
 import MenuSuccess from "../views/menu/MenuSuccess.vue";
+import MenuDelete from "../views/menu/MenuDelete.vue";
 
 const routes = [
   {
@@ -98,6 +99,12 @@ const routes = [
     path: "/menu/menusuccess",
     name: "menuSuccess",
     component: MenuSuccess,
+  },
+
+  {
+    path: "/menu/menudelete",
+    name: "menuDelete",
+    component: MenuDelete,
   },
 ];
 

@@ -63,14 +63,17 @@
       </div>
     </div>
   </div>
-  <h2>Afficher</h2>
+  <br /><br /><br /><br />
+  <h2>Liste des plats</h2>
   <ul>
     <li v-for="task in tasks" :key="task.id">
-      {{ task.name }}
-      {{ task.category }}
-      {{ task.priceHt }}
-      {{ task.tva }}
-      {{ task.priceTtc }}
+      <p>Nom du plat : {{ task.name }}</p>
+      <p>Catégorie : {{ task.category }}</p>
+      <p>Prix HT : {{ task.priceHt }}</p>
+      <p>TVA : {{ task.tva }}</p>
+      <p>Prix TTC : {{ task.priceTtc }}</p>
+      <button @click="deleteProfil">Supprimer</button>
+      <br /><br /><br />
     </li>
   </ul>
 </template>
@@ -79,8 +82,6 @@
 export default {
   name: "Create",
   components: {},
-
-  // Déclaration de la DATA qui sera envoyée en requête sur la BDD
 
   data() {
     return {
@@ -106,8 +107,6 @@ export default {
     const data = await response.json();
 
     this.tasks = data.liste;
-
-    console.log(data);
   },
 
   methods: {
@@ -129,9 +128,24 @@ export default {
       // FETCH pour envoyé la requête sur l'API
       const response = await fetch("http://127.0.0.1:8000/api/menu", options);
       const data = await response.json();
-      //   console.log(data.message);
+
+      // if (data.message == true) {
+      //   location = "http://localhost:8080/menu/menusuccess";
+      // }
+    },
+
+    async deleteProfil() {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch("http://127.0.0.1:8000/api/menu/1", options);
+      const data = await response.json();
+
       if (data.message == true) {
-        location = "http://localhost:8080/menu/menusuccess";
+        location = "http://localhost:8080/menu/menudelete";
       }
     },
   },
