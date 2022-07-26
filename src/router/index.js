@@ -81,6 +81,12 @@ const routes = [
     component: CreateResto,
   },
 
+  {
+    path: "/restaurants/success",
+    name: "createSuccess",
+    component: Success,
+  },
+
   // Menu
 
   {
