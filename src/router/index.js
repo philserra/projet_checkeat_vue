@@ -14,6 +14,7 @@ import MenuSuccess from "../views/menu/MenuSuccess.vue";
 import MenuDelete from "../views/menu/MenuDelete.vue";
 import Success_resto from "../views/restaurants/Success_resto.vue";
 import DeleteResto from "../views/restaurants/DeleteResto.vue";
+import ListeResto from "../views/guests/ListeResto.vue";
 
 const routes = [
   {
@@ -113,6 +114,14 @@ const routes = [
     path: "/menu/menudelete",
     name: "menuDelete",
     component: MenuDelete,
+  },
+
+  // Guests
+
+  {
+    path: "/guests/restaurants",
+    name: "listeResto",
+    component: ListeResto,
   },
 ];
 

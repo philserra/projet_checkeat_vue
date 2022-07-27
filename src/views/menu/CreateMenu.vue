@@ -142,28 +142,20 @@ export default {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
-      const response = await fetch("http://127.0.0.1:8000/api/menu/1", options);
+      const response = await fetch("http://127.0.0.1:8000/api/menu", options);
       const data = await response.json();
+
+      // if (data.message == true) {
+      //   location = "http://localhost:8080/menu/menudelete";
+      // }
 
       if (data.message == true) {
-        location = "http://localhost:8080/menu/menudelete";
+        this.$router.push("/restaurants/delete");
       }
-    },
-
-    async display() {
-      const options = {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-        response = await fetch("http://127.0.0.1:8000/api/menu", options);
-
-      const data = await response.json();
-
-      this.tasks = data.liste;
     },
   },
 };
