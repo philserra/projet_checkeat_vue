@@ -3,15 +3,21 @@
   <div>
     <h3>Restaurants :</h3>
 
-    <p>{{ id }}</p>
-    <p>{{ name }}</p>
-    <p>{{ adress }}</p>
-    <p>{{ zip }}</p>
-    <p>{{ city }}</p>
-    <p>{{ phone }}</p>
-    <p>{{ email }}</p>
-    <p>{{ timetable }}</p>
-    <p>{{ capacity }}</p>
+    <div class="list">
+      <ul>
+        <li v-for="elem in liste" :key="elem.id">
+          <p>Nom du restaurant : {{ elem.name }}</p>
+          <p>Adresse : {{ elem.adress }}</p>
+          <p>Code postale : {{ elem.zip }}</p>
+          <p>Ville : {{ elem.city }}</p>
+          <p>Téléphone : {{ elem.tel }}</p>
+          <p>Email : {{ elem.email }}</p>
+          <p>Horaires d'ouverture : {{ elem.timetable }}</p>
+          <p>Capacité : {{ elem.capacity }}</p>
+          <button @click="deleteResto">Supprimer</button>
+        </li>
+      </ul>
+    </div>
 
     <!-- <button @click="deleteProfil">Supprimer</button> -->
 
@@ -29,18 +35,18 @@
 export default {
   data() {
     return {
-      id: "",
+      liste: "",
       name: "",
       adress: "",
       zip: "",
       city: "",
-      phone: "",
+      tel: "",
       email: "",
       timetable: "",
       capacity: "",
     };
   },
-  async getResto() {
+  async mounted() {
     const options = {
       method: "GET",
       headers: {
@@ -59,16 +65,29 @@ export default {
 
     console.log(data);
 
-    const restaurant = data.restaurant;
+    this.liste = data.restaurants;
+  },
 
-    this.name = restaurant.name;
-    this.adress = restaurant.adress;
-    this.zip = restaurant.zip;
-    this.city = restaurant.city;
-    this.phone = restaurant.phone;
-    this.email = restaurant.email;
-    this.timetable = restaurant.timetable;
-    this.capacity = restaurant.capacity;
+  methods: {
+    async deleteResto() {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/restaurants",
+        options
+      );
+      const data = await response.json();
+
+      if (data.message == true) {
+        location = "http://localhost:8080/restaurants/delete";
+      }
+    },
   },
 };
 </script>

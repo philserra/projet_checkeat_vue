@@ -1,5 +1,5 @@
 <template>
-  <h1>Votre profil a bien été modifié</h1>
+  <h1>Votre restaurant a bien été supprimé</h1>
   <button @click="getDashboard()">Tableau de bord</button>
 </template>
 

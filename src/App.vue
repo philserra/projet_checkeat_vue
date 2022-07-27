@@ -12,6 +12,7 @@
       <router-link to="/restaurateurs/connexion">Connexion</router-link> |
       <router-link to="/restaurateurs/profil">Profil</router-link> |
       <router-link to="/restaurateurs/dashboard">Dashboard</router-link>
+      <button type="button" @click="logout">Logout</button>
     </nav>
   </div>
   <router-view />
@@ -20,7 +21,26 @@
 <script>
 import "./assets/tailwind.css";
 
-export default {};
+export default {
+  methods: {
+    async logout() {
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+      const response = await fetch("http://127.0.0.1:8000/api/logout", options);
+
+      const data = await response.json();
+
+      localStorage.removeItem("token", data.access_token);
+      this.$router.push("/restaurateurs/connexion");
+    },
+  },
+};
 </script>
 
 <style>
