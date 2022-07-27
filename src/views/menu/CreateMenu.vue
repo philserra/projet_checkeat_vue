@@ -89,12 +89,12 @@ export default {
   data() {
     return {
       tasks: [],
-
       name: "",
       category: "",
       priceHt: "",
       tva: "",
       priceTtc: "",
+      id_restaurant: "",
     };
   },
 
@@ -103,6 +103,7 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       },
       response = await fetch("http://127.0.0.1:8000/api/menu", options);
@@ -113,12 +114,26 @@ export default {
   },
 
   methods: {
+    async deleteProfil() {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      };
+      const response = await fetch("http://127.0.0.1:8000/api/menu", options);
+      const data = await response.json();
+    },
+
     async register() {
       const options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({
           name: this.name,
@@ -126,6 +141,7 @@ export default {
           priceHt: this.priceHt,
           tva: this.tva,
           priceTtc: this.priceTtc,
+          id_restaurant: this.id_restaurant,
         }),
       };
       // FETCH pour envoyé la requête sur l'API
@@ -133,37 +149,8 @@ export default {
       const data = await response.json();
 
       // if (data.message == true) {
-      //   location = "http://localhost:8080/menu/menusuccess";
+      //   this.$router.push("/menu/menudelete");
       // }
-    },
-
-    async deleteProfil() {
-      const options = {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const response = await fetch("http://127.0.0.1:8000/api/menu/1", options);
-      const data = await response.json();
-
-      if (data.message == true) {
-        location = "http://localhost:8080/menu/menudelete";
-      }
-    },
-
-    async display() {
-      const options = {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-        response = await fetch("http://127.0.0.1:8000/api/menu", options);
-
-      const data = await response.json();
-
-      this.tasks = data.liste;
     },
   },
 };

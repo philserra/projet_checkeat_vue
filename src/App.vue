@@ -11,7 +11,7 @@
       <router-link to="/restaurateurs/create">Inscription</router-link> |
       <router-link to="/restaurateurs/connexion">Connexion</router-link> |
       <router-link to="/restaurateurs/profil">Profil</router-link> |
-      <router-link to="/restaurateurs/dashboard">Dashboard</router-link>
+      <router-link to="/restaurateurs/dashboard">Dashboard</router-link> |
       <button type="button" @click="logout">Logout</button>
     </nav>
   </div>

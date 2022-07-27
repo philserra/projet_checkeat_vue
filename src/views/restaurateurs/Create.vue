@@ -136,12 +136,11 @@ export default {
       );
 
       const data = await response.json();
-      //   console.log(data.message);
+
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
-
-        location = "http://localhost:8080/restaurateurs/success";
+        this.$router.push("/restaurateurs/success");
       }
     },
   },
