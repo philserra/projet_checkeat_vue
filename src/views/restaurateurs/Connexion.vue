@@ -40,7 +40,8 @@ export default {
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
-        this.$router.push("/restaurateurs/dashboard");
+        location = "http://localhost:8080/restaurateurs/dashboard/";
+        // this.$router.push("/restaurateurs/dashboard");
       }
     },
   },

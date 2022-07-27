@@ -10,10 +10,10 @@
     </nav>
 
     <nav v-if="token">
+      <p>Bonjour {{ firstname }} {{ lastname }}</p>
       <router-link to="/menu/create">Menu</router-link> |
       <router-link to="/restaurateurs/profil">Profil</router-link> |
-      <router-link to="/restaurateurs/dashboard">Dashboard</router-link>
-      |
+      <router-link to="/restaurateurs/dashboard">Dashboard</router-link> |
       <button type="button" @click="logout">Logout</button>
     </nav>
   </div>
@@ -24,14 +24,39 @@
 import "./assets/tailwind.css";
 import Connexion from "./views/restaurateurs/Connexion.vue";
 const token = localStorage.getItem("token");
-console.log(token);
 
 export default {
   data() {
     return {
       token: token,
+      lastname: "",
+      firstname: "",
     };
   },
+
+  async mounted() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    };
+
+    const response = await fetch(
+      "http://127.0.0.1:8000/api/restaurateurs",
+      options
+    );
+
+    const data = await response.json();
+
+    const profil = data.restaurateur;
+
+    this.lastname = profil.lastname;
+    this.firstname = profil.firstname;
+  },
+
   methods: {
     async logout() {
       const options = {
@@ -47,8 +72,8 @@ export default {
       const data = await response.json();
 
       localStorage.removeItem("token", data.access_token);
-      location = "http://localhost:8080/";
-      // this.$router.push({ name: "home" });
+      // location = "http://localhost:8080/";
+      // this.$router.push("/");
       window.location.reload();
     },
   },
