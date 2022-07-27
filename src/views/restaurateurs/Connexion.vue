@@ -34,15 +34,12 @@ export default {
         }),
       };
       const response = await fetch("http://127.0.0.1:8000/api/login", options);
-      // console.log(response);
 
       const data = await response.json();
-      //   console.log(data.message);
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
-        location = "http://localhost:8080/restaurateurs/dashboard";
-        // this.$router.push("/restaurateurs/dashboard");
+        this.$router.push("/restaurateurs/dashboard");
       }
     },
   },

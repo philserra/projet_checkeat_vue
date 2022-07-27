@@ -159,9 +159,6 @@ export default {
       const data = await response.json();
 
       this.$router.push("/restaurateurs/editsuccess");
-
-      // console.log(data.restaurateur);
-      // return profil;
     },
   },
 };
