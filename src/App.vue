@@ -2,16 +2,18 @@
   <div
     class="wrapper flex justify-between text-lg text-red-600 font-bold p-2 bg-slate-400 bg-opacity-75 rounded"
   >
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/menu/create">Menu</router-link>
-    </nav>
-    <nav>
-      <router-link to="/restaurateurs/create">Inscription</router-link> |
+    <nav><router-link to="/">Home</router-link> |</nav>
+
+    <nav v-if="!token">
       <router-link to="/restaurateurs/connexion">Connexion</router-link> |
+      <router-link to="/restaurateurs/create">Inscription</router-link> |
+    </nav>
+
+    <nav v-if="token">
+      <router-link to="/menu/create">Menu</router-link> |
       <router-link to="/restaurateurs/profil">Profil</router-link> |
       <router-link to="/restaurateurs/dashboard">Dashboard</router-link>
+      |
       <button type="button" @click="logout">Logout</button>
     </nav>
   </div>
@@ -20,8 +22,16 @@
 
 <script>
 import "./assets/tailwind.css";
+import Connexion from "./views/restaurateurs/Connexion.vue";
+const token = localStorage.getItem("token");
+console.log(token);
 
 export default {
+  data() {
+    return {
+      token: token,
+    };
+  },
   methods: {
     async logout() {
       const options = {
@@ -37,7 +47,9 @@ export default {
       const data = await response.json();
 
       localStorage.removeItem("token", data.access_token);
-      this.$router.push("/restaurateurs/connexion");
+      location = "http://localhost:8080/";
+      // this.$router.push({ name: "home" });
+      window.location.reload();
     },
   },
 };

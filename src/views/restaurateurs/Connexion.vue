@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: "Connexion",
   data() {
     return {
       email: "",
@@ -42,7 +43,7 @@ export default {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
         location = "http://localhost:8080/restaurateurs/dashboard";
-        // this.$router.push("/restaurateurs/dashboard");
+        // this.$router.push({ name: "dashboard" });
       }
     },
   },
