@@ -118,7 +118,7 @@ const routes = [
   // Guests
 
   {
-    path: "/guests/restaurants",
+    path: "/guests",
     name: "listeResto",
     component: ListeResto,
   },
