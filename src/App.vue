@@ -12,8 +12,12 @@
     <nav v-if="token">
       <router-link to="/menu/create">Menu</router-link> |
       <router-link to="/restaurateurs/profil">Profil</router-link> |
+<<<<<<< HEAD
       <router-link to="/restaurateurs/dashboard">Dashboard</router-link>
       |
+=======
+      <router-link to="/restaurateurs/dashboard">Dashboard</router-link> |
+>>>>>>> 1c8d2e73bb6375ff9e03c1008752bd305f449171
       <button type="button" @click="logout">Logout</button>
     </nav>
   </div>

@@ -63,8 +63,6 @@ export default {
 
     const data = await response.json();
 
-    console.log(data);
-
     this.liste = data.restaurants;
   },
 
@@ -85,7 +83,7 @@ export default {
       const data = await response.json();
 
       if (data.message == true) {
-        location = "http://localhost:8080/restaurants/delete";
+        this.$router.push("/restaurants/delete");
       }
     },
   },

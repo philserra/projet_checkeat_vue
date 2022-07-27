@@ -1,19 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import Connexion from "../views/restaurateurs/Connexion.vue";
+import Dashboard from "../views/restaurateurs/Dashboard.vue";
+import Create from "../views/restaurateurs/Create.vue";
 import Success from "../views/restaurateurs/Success.vue";
 import Edit from "../views/restaurateurs/Edit.vue";
-import Delete from "../views/restaurateurs/Delete.vue";
 import EditSuccess from "../views/restaurateurs/EditSuccess.vue";
-import Create from "../views/restaurateurs/Create.vue";
-import Dashboard from "../views/restaurateurs/Dashboard.vue";
+import Delete from "../views/restaurateurs/Delete.vue";
 import Profil from "../views/restaurateurs/Profil.vue";
-import Connexion from "../views/restaurateurs/Connexion.vue";
 import CreateResto from "../views/restaurants/CreateResto.vue";
+import Success_resto from "../views/restaurants/Success_resto.vue";
+import DeleteResto from "../views/restaurants/DeleteResto.vue";
 import CreateMenu from "../views/menu/CreateMenu.vue";
 import MenuSuccess from "../views/menu/MenuSuccess.vue";
 import MenuDelete from "../views/menu/MenuDelete.vue";
 import Success_resto from "../views/restaurants/Success_resto.vue";
 import DeleteResto from "../views/restaurants/DeleteResto.vue";
+import ListeResto from "../views/guests/ListeResto.vue";
 
 const routes = [
   {
@@ -22,18 +25,34 @@ const routes = [
     component: HomeView,
   },
 
+  // Login et Dashboard
+
+  {
+    path: "/restaurateurs/connexion",
+    name: "connexion",
+    component: Connexion,
+  },
+
+  {
+    path: "/restaurateurs/dashboard",
+    name: "dashboard",
+    component: Dashboard,
+  },
+
   // Restaurateurs
+
+  {
+    path: "/restaurateurs/create",
+    name: "create",
+    component: Create,
+  },
+
   {
     path: "/restaurateurs/success",
     name: "success",
     component: Success,
   },
 
-  {
-    path: "/restaurateurs/delete",
-    name: "delete",
-    component: Delete,
-  },
   {
     path: "/restaurateurs/edit",
     name: "edit",
@@ -45,25 +64,17 @@ const routes = [
     name: "editsuccess",
     component: EditSuccess,
   },
+
   {
-    path: "/restaurateurs/create",
-    name: "create",
-    component: Create,
+    path: "/restaurateurs/delete",
+    name: "delete",
+    component: Delete,
   },
-  {
-    path: "/restaurateurs/dashboard",
-    name: "dashboard",
-    component: Dashboard,
-  },
+
   {
     path: "/restaurateurs/profil",
     name: "profil",
     component: Profil,
-  },
-  {
-    path: "/restaurateurs/connexion",
-    name: "connexion",
-    component: Connexion,
   },
 
   // Restaurants
@@ -104,6 +115,14 @@ const routes = [
     path: "/menu/menudelete",
     name: "menuDelete",
     component: MenuDelete,
+  },
+
+  // Guests
+
+  {
+    path: "/guests/restaurants",
+    name: "listeResto",
+    component: ListeResto,
   },
 ];
 

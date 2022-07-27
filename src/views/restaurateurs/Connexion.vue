@@ -35,15 +35,17 @@ export default {
         }),
       };
       const response = await fetch("http://127.0.0.1:8000/api/login", options);
-      // console.log(response);
 
       const data = await response.json();
-      //   console.log(data.message);
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
+<<<<<<< HEAD
         location = "http://localhost:8080/restaurateurs/dashboard";
         // this.$router.push({ name: "dashboard" });
+=======
+        this.$router.push("/restaurateurs/dashboard");
+>>>>>>> 1c8d2e73bb6375ff9e03c1008752bd305f449171
       }
     },
   },

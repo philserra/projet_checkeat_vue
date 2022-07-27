@@ -5,7 +5,6 @@
 
     <div class="wrapper">
       <div id="mainContainer" class="mainContainer">
-        <!-- <button @click="accueil()">Page principale</button> -->
         <form @submit.prevent="register">
           <div class="input-container">
             <label for="name"></label>
@@ -103,24 +102,7 @@
             />
           </div>
 
-          <div class="input-container">
-            <!-- <label for="id_restaurateur"></label>
-            <div v-for="elem in liste" :key="elem">
-              <input type="number" :value="elem.id_restaurateur[1]" />
-            </div> -->
-
-            <!-- <select
-              v-model="selected"
-              name="id_restaurateur"
-              id="id_restaurateur"
-            >
-              <option value="">Aucun</option>
-              <option>1</option>
-              <option>
-                {{ id_restaurateur }}
-              </option>
-            </select> -->
-          </div>
+          <div class="input-container"></div>
 
           <div class="boxButton">
             <input type="submit" value="Ajouter" />
@@ -133,7 +115,6 @@
 </template>
 
 <script>
-// const token = localStorage.getItem("token");
 export default {
   name: "Create",
   components: {},
@@ -152,7 +133,6 @@ export default {
       capacity: "",
       id_restaurateur: "",
       message: "",
-      // liste: [],
     };
   },
 
@@ -172,16 +152,6 @@ export default {
     );
 
     const data = await response.json();
-
-    console.log(data);
-
-    // this.liste = data.restaurants;
-
-    // data.restaurants.forEach((element) => {
-    //   this.id_restaurateur = element.id_restaurateur;
-    // });
-
-    // this.id_restaurateur = profil.id_restaurateur;
   },
 
   methods: {
@@ -214,9 +184,8 @@ export default {
       );
 
       const data = await response.json();
-      //   console.log(data.message);
       if (data.message == true) {
-        location = "http://localhost:8080/restaurants/success";
+        this.$router.push("/restaurants/success");
       }
     },
   },
