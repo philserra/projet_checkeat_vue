@@ -10,6 +10,7 @@ import Delete from "../views/restaurateurs/Delete.vue";
 import Profil from "../views/restaurateurs/Profil.vue";
 import CreateResto from "../views/restaurants/CreateResto.vue";
 import Success_resto from "../views/restaurants/Success_resto.vue";
+import Edit_resto from "../views/restaurants/Edit_resto.vue";
 import DeleteResto from "../views/restaurants/DeleteResto.vue";
 import CreateMenu from "../views/menu/CreateMenu.vue";
 import MenuSuccess from "../views/menu/MenuSuccess.vue";
@@ -87,6 +88,12 @@ const routes = [
     path: "/restaurants/success",
     name: "createSuccess",
     component: Success_resto,
+  },
+
+  {
+    path: "/restaurants/edit",
+    name: "editResto",
+    component: Edit_resto,
   },
 
   {

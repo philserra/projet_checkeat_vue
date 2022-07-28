@@ -1,11 +1,11 @@
 <template>
-  <!-- Formulaire Inscription Restaurateur -->
+  <!-- Formulaire Modification Restaurant(s) -->
   <div class="register">
-    <h2 class="titleRegister">Ajouter votre restaurant</h2>
+    <h2>Modifier votre restaurant</h2>
 
     <div class="wrapper">
       <div id="mainContainer" class="mainContainer">
-        <form @submit.prevent="register">
+        <form @submit.prevent="editResto">
           <div class="input-container">
             <label for="name"></label>
             <input
@@ -55,7 +55,7 @@
           </div>
 
           <div class="input-container">
-            <label for="phone"></label>
+            <label for="tel"></label>
             <input
               type="text"
               class="phoneRegister"
@@ -105,7 +105,7 @@
           <div class="input-container"></div>
 
           <div class="boxButton">
-            <input type="submit" value="Ajouter" />
+            <input type="submit" value="Valider les modifications" />
           </div>
         </form>
       </div>
@@ -116,11 +116,6 @@
 
 <script>
 export default {
-  name: "Create",
-  components: {},
-
-  // Déclaration de la DATA qui sera envoyée en requête sur la BDD
-
   data() {
     return {
       name: "",
@@ -147,17 +142,30 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/profile",
+      "http://127.0.0.1:8000/api/restaurants",
       options
     );
 
     const data = await response.json();
+
+    console.log(data.restaurants);
+
+    const resto = data.restaurants;
+
+    this.name = resto.name;
+    this.adress = resto.adress;
+    this.zip = resto.zip;
+    this.city = resto.city;
+    this.tel = resto.tel;
+    this.email = resto.email;
+    this.timetable = resto.timetable;
+    this.capacity = resto.capacity;
   },
 
   methods: {
-    async register() {
+    async editResto() {
       const options = {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -176,18 +184,17 @@ export default {
         }),
       };
 
-      // FETCH pour envoyé la requête sur l'API
-
       const response = await fetch(
         "http://127.0.0.1:8000/api/restaurants",
         options
       );
 
       const data = await response.json();
-      if (data.message == true) {
-        this.$router.push("/restaurants/success");
-      }
+
+      this.$router.push("/restaurateurs/dashboard");
     },
   },
 };
 </script>
+
+<style></style>
