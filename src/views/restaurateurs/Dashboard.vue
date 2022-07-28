@@ -16,7 +16,7 @@
           <p>Capacité : {{ elem.capacity }}</p>
           <button @click="editResto">Modifier</button>
           <br />
-          <button @click="deleteResto">Supprimer</button>
+          <button @click="deleteResto(elem.id)">Supprimer</button>
         </li>
       </ul>
     </div>
@@ -69,7 +69,7 @@ export default {
       this.$router.push("/restaurants/edit");
     },
 
-    async deleteResto() {
+    async deleteResto(id) {
       const options = {
         method: "DELETE",
         headers: {
@@ -79,7 +79,7 @@ export default {
         },
       };
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurants",
+        "http://127.0.0.1:8000/api/restaurants/" + id,
         options
       );
       const data = await response.json();

@@ -5,7 +5,7 @@
 
     <div class="wrapper">
       <div id="mainContainer" class="mainContainer">
-        <form @submit.prevent="editResto">
+        <form @submit.prevent="editResto(id)">
           <div class="input-container">
             <label for="name"></label>
             <input
@@ -163,7 +163,7 @@ export default {
   },
 
   methods: {
-    async editResto() {
+    async editResto(id) {
       const options = {
         method: "PUT",
         headers: {
@@ -185,7 +185,7 @@ export default {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurants",
+        "http://127.0.0.1:8000/api/restaurants/" + id,
         options
       );
 
