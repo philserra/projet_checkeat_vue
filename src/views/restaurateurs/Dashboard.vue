@@ -1,3 +1,4 @@
+```
 <template>
   <div
     class="min-h-screen bg-black bg-no-repeat bg-center bg-cover"
@@ -13,7 +14,6 @@
           <h1 class="inline-block text-red-600 text-3xl p-2">
             Tableau de bord
           </h1>
-
           <button
             class="inline-block p-2 m-2 text-red-600 bg-transparent font-semibold hover:bg-red-500 hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
           >
@@ -42,6 +42,13 @@
                         <p>Horaires d'ouverture : {{ elem.timetable }}</p>
                         <p>Capacité : {{ elem.capacity }}</p>
                         <button @click="deleteResto(elem.id)">Supprimer</button>
+                        <button
+                          class="inline-block p-2 m-2 text-white bg-transparent hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                        >
+                          <a href="http://localhost:8080/menu/create"
+                            >Ajouter un menu</a
+                          >
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -54,7 +61,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -79,22 +85,17 @@ export default {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
-
     const response = await fetch(
       "http://127.0.0.1:8000/api/restaurants",
       options
     );
-
     const data = await response.json();
-
     this.liste = data.restaurants;
   },
-
   methods: {
     editResto() {
       this.$router.push("/restaurants/edit");
     },
-
     async deleteResto(id) {
       const options = {
         method: "DELETE",
@@ -109,7 +110,6 @@ export default {
         options
       );
       const data = await response.json();
-
       if (data.message == true) {
         this.$router.push("/restaurants/delete");
       }
@@ -117,5 +117,5 @@ export default {
   },
 };
 </script>
-
 <style></style>
+```
