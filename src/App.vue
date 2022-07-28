@@ -1,20 +1,55 @@
 <template>
   <div
-    class="wrapper flex justify-between text-lg text-red-600 font-bold p-2 bg-slate-400 bg-opacity-75 rounded"
+    class="wrapper flex justify-between align-center text-lg text-red-600 font-bold p-2 bg-black"
   >
-    <nav><router-link to="/">Home</router-link> |</nav>
+    <nav>
+      <router-link
+        to="/"
+        class="border-2 border-red-700 rounded p-1 m-2 px-5 py-2.5 flex align-center"
+        >Home</router-link
+      >
+    </nav>
 
-    <nav v-if="!token">
-      <router-link to="/restaurateurs/connexion">Connexion</router-link> |
-      <router-link to="/restaurateurs/create">Inscription</router-link> |
+    <nav v-if="!token" class="mt-1 flex align-center">
+      <p class="inline-block mt-5 text-lg font-black text-red-600">
+        Devenez un de nos partenaires restaurateurs ->
+      </p>
+      <router-link
+        to="/restaurateurs/connexion"
+        class="inline-block border-2 border-red-700 rounded m-2 px-5 py-2.5"
+        >Connexion</router-link
+      >
+
+      <router-link
+        to="/restaurateurs/create"
+        class="inline-block border-2 border-red-700 rounded m-2 px-5 py-2.5"
+        >Inscription</router-link
+      >
     </nav>
 
     <nav v-if="token">
-      <p>Bonjour {{ firstname }} {{ lastname }}</p>
-      <router-link to="/menu/create">Menu</router-link> |
-      <router-link to="/restaurateurs/profil">Profil</router-link> |
-      <router-link to="/restaurateurs/dashboard">Dashboard</router-link> |
-      <button type="button" @click="logout">Logout</button>
+      <p class="inline-block underline m-2">
+        Bonjour {{ firstname }} {{ lastname }}
+      </p>
+      <router-link
+        to="/restaurateurs/profil"
+        class="inline-block border-2 border-red-700 rounded m-2 px-5 py-2.5"
+        >Profil</router-link
+      >
+
+      <router-link
+        to="/restaurateurs/dashboard"
+        class="inline-block border-2 border-red-700 rounded m-2 px-5 py-2.5"
+        >Dashboard</router-link
+      >
+
+      <button
+        type="button"
+        @click="logout"
+        class="inline-block border-2 border-red-700 rounded m-2 px-5 py-2.5"
+      >
+        Logout
+      </button>
     </nav>
   </div>
   <router-view />
