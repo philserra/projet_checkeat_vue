@@ -15,7 +15,7 @@
           </h1>
 
           <button
-            class="inline-block p-2 m-2 text-red-600 bg-transparent hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+            class="inline-block p-2 m-2 text-red-600 bg-transparent font-semibold hover:bg-red-500 hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
           >
             <a href="http://localhost:8080/restaurants/create"
               >Ajouter un restaurant</a
@@ -41,7 +41,7 @@
                         <p>Email : {{ elem.email }}</p>
                         <p>Horaires d'ouverture : {{ elem.timetable }}</p>
                         <p>Capacité : {{ elem.capacity }}</p>
-                        <button @click="deleteResto">Supprimer</button>
+                        <button @click="deleteResto(elem.id)">Supprimer</button>
                       </div>
                     </div>
                   </div>
