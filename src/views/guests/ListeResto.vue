@@ -5,6 +5,7 @@
     <ul>
       <li v-for="elem in liste" :key="elem.id">
         <p>Nom du restaurant : {{ elem.name }}</p>
+        <button>Voir le menu</button>
       </li>
     </ul>
   </div>
@@ -14,8 +15,7 @@
 export default {
   data() {
     return {
-      liste: "",
-      name: "",
+      liste: [],
     };
   },
   async mounted() {
@@ -27,10 +27,7 @@ export default {
       },
     };
 
-    const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurants",
-      options
-    );
+    const response = await fetch("http://127.0.0.1:8000/api/guests", options);
 
     const data = await response.json();
 

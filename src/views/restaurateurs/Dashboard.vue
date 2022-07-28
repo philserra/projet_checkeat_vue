@@ -91,6 +91,10 @@ export default {
   },
 
   methods: {
+    editResto() {
+      this.$router.push("/restaurants/edit");
+    },
+
     async deleteResto() {
       const options = {
         method: "DELETE",

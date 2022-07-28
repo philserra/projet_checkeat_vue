@@ -79,7 +79,7 @@
           </div>
 
           <div class="boxButton">
-            <input type="submit" value="Valider modifications" />
+            <input type="submit" value="Valider les modifications" />
           </div>
         </form>
       </div>
@@ -117,8 +117,6 @@ export default {
 
     const data = await response.json();
 
-    console.log(data);
-
     const profil = data.restaurateur;
 
     this.lastname = profil.lastname;
@@ -127,9 +125,6 @@ export default {
     this.email = profil.email;
     this.phone = profil.phone;
     this.password = profil.password;
-
-    // console.log(data.restaurateur);
-    // return data.restaurateur;
   },
 
   methods: {
