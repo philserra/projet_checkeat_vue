@@ -91,7 +91,7 @@ const routes = [
   },
 
   {
-    path: "/restaurants/edit",
+    path: "/restaurants/edit/:id",
     name: "editResto",
     component: Edit_resto,
   },

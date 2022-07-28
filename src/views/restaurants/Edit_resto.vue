@@ -5,7 +5,7 @@
 
     <div class="wrapper">
       <div id="mainContainer" class="mainContainer">
-        <form @submit.prevent="editResto(id)">
+        <form @submit.prevent="editResto(id)" method="post">
           <div class="input-container">
             <label for="name"></label>
             <input
@@ -142,15 +142,15 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurants",
+      "http://127.0.0.1:8000/api/restaurants/" + this.$route.params.id,
       options
     );
 
     const data = await response.json();
 
-    console.log(data.restaurants);
+    console.log(data.restaurant);
 
-    const resto = data.restaurants;
+    const resto = data.restaurant;
 
     this.name = resto.name;
     this.adress = resto.adress;
@@ -185,7 +185,7 @@ export default {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurants/" + id,
+        "http://127.0.0.1:8000/api/restaurants/" + this.$route.params.id,
         options
       );
 

@@ -41,7 +41,18 @@
                         <p>Email : {{ elem.email }}</p>
                         <p>Horaires d'ouverture : {{ elem.timetable }}</p>
                         <p>Capacité : {{ elem.capacity }}</p>
-                        <button @click="deleteResto(elem.id)">Supprimer</button>
+                        <button
+                          class="inline-block p-2 m-2 text-white bg-transparent hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                          @click="editProfil(elem.id)"
+                        >
+                          Modifier
+                        </button>
+                        <button
+                          class="inline-block p-2 m-2 text-white bg-transparent hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                          @click="deleteResto(elem.id)"
+                        >
+                          Supprimer
+                        </button>
                         <button
                           class="inline-block p-2 m-2 text-white bg-transparent hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
                         >
@@ -113,6 +124,9 @@ export default {
       if (data.message == true) {
         this.$router.push("/restaurants/delete");
       }
+    },
+    editProfil(id) {
+      this.$router.push("/restaurants/edit/" + id);
     },
   },
 };
