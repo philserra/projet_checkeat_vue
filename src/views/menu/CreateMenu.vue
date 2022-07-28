@@ -71,10 +71,10 @@
       <li v-for="task in tasks" :key="task.id">
         <p>Nom du plat : {{ task.name }}</p>
         <p>Catégorie : {{ task.category }}</p>
-        <p>Prix HT : {{ task.priceHt }}</p>
-        <p>TVA : {{ task.tva }}</p>
-        <p>Prix TTC : {{ task.priceTtc }}</p>
-        <button @click="deleteProfil">Supprimer</button>
+        <p>Prix HT : {{ task.priceHt }} Euros</p>
+        <p>TVA : {{ task.tva }} %</p>
+        <p>Prix TTC : {{ task.priceTtc }} Euros</p>
+        <button @click="deleteMenu(task.id)">Supprimer</button>
         <br /><br /><br />
       </li>
     </ul>
@@ -89,6 +89,7 @@ export default {
   data() {
     return {
       tasks: [],
+      id: "",
       name: "",
       category: "",
       priceHt: "",
@@ -114,19 +115,6 @@ export default {
   },
 
   methods: {
-    async deleteProfil() {
-      const options = {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      };
-      const response = await fetch("http://127.0.0.1:8000/api/menu", options);
-      const data = await response.json();
-    },
-
     async register() {
       const options = {
         method: "POST",
@@ -151,18 +139,22 @@ export default {
       // if (data.message == true) {
       //   this.$router.push("/menu/menudelete");
       // }
+      window.location.reload();
     },
 
-    async deleteProfil() {
+    async deleteMenu(id) {
       const options = {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
+          // Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
-      const response = await fetch("http://127.0.0.1:8000/api/menu", options);
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/menu/" + id,
+        options
+      );
       const data = await response.json();
 
       if (data.message == true) {
