@@ -14,14 +14,12 @@
           <p>Email : {{ elem.email }}</p>
           <p>Horaires d'ouverture : {{ elem.timetable }}</p>
           <p>Capacité : {{ elem.capacity }}</p>
+          <button @click="editResto">Modifier</button>
+          <br />
           <button @click="deleteResto">Supprimer</button>
         </li>
       </ul>
     </div>
-
-    <!-- <button @click="deleteProfil">Supprimer</button> -->
-
-    <div></div>
 
     <button>
       <a href="http://localhost:8080/restaurants/create"
@@ -67,6 +65,10 @@ export default {
   },
 
   methods: {
+    editResto() {
+      this.$router.push("/restaurants/edit");
+    },
+
     async deleteResto() {
       const options = {
         method: "DELETE",
