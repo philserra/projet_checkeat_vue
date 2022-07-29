@@ -232,7 +232,7 @@ export default {
       const data = await response.json();
 
       if (data.message == true) {
-        this.$router.push("/restaurants/delete");
+        this.$router.push("/menu/delete");
       }
     },
   },

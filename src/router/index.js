@@ -117,7 +117,7 @@ const routes = [
   },
 
   {
-    path: "/menu/menudelete",
+    path: "/menu/delete",
     name: "menuDelete",
     component: MenuDelete,
   },
