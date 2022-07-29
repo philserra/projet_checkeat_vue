@@ -15,15 +15,14 @@
         Devenez un de nos partenaires restaurateurs ->
       </p>
       <router-link
+        to="/restaurateurs/create"
+        class="inline-block border-2 animate-pulse border-red-700 rounded hover:bg-red-500 hover:text-white m-2 px-5 py-2.5"
+        >Inscription</router-link
+      >
+      <router-link
         to="/restaurateurs/connexion"
         class="inline-block border-2 border-red-700 rounded hover:bg-red-500 hover:text-white m-2 px-5 py-2.5"
         >Connexion</router-link
-      >
-
-      <router-link
-        to="/restaurateurs/create"
-        class="inline-block border-2 border-red-700 rounded hover:bg-red-500 hover:text-white m-2 px-5 py-2.5"
-        >Inscription</router-link
       >
     </nav>
 

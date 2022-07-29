@@ -22,14 +22,14 @@
             >
           </button>
         </div>
-        <div class="p-6 bg-black">
+        <div class="p-4 bg-black">
           <section class="text-gray-200 body-font">
             <div class="container px-5 py-16 mx-auto">
-              <h3 class="p-2">Restaurants :</h3>
-              <ul>
-                <li v-for="elem in liste" :key="elem.id">
-                  <div class="flex flex-wrap -m-4">
-                    <div class="xl:w-1/4 md:w-1/2 p-4">
+              <h3 class="text-xl text-red-600 underline p-2">Restaurants :</h3>
+              <div class="">
+                <ul>
+                  <li v-for="elem in liste" :key="elem.id">
+                    <div class="p-4">
                       <div
                         class="bg-red-900 border-2 border-gray-200 p-6 rounded-lg"
                       >
@@ -62,9 +62,9 @@
                         </button>
                       </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <!-- Formulaire Inscription Restaurateur -->
   <div
-    class="h-screen w-screen flex justify-center align-center pt-28 bg-black bg-no-repeat bg-center bg-cover"
+    class="h-screen w-screen flex justify-center align-center pt-1 bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
     "
