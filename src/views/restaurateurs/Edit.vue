@@ -1,22 +1,22 @@
 <template>
   <!-- Formulaire Modification Restaurateur -->
   <div
-    class="min-h-screen bg-black bg-no-repeat bg-center bg-cover"
+    class="min-h-screen flex justify-center bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
     "
   >
     <div
-      class="list max-w-7xl bg-opacity-75 mx-auto h-full sm:px-6 lg:px-8 p-10"
+      class="list max-w-7xl flex justify-center bg-opacity-75 mx-auto h-full sm:px-6 lg:px-8 p-10"
     >
-      <div class="bg-black overflow-hidden shadow-sm sm:rounded-lg">
+      <div class="bg-black overflow-hidden p-10 shadow-sm sm:rounded-lg">
         <h2 class="titleRegister text-2xl text-red-600 p-2">
           Modification de votre profil
         </h2>
 
         <section id="mainContainer" class="mainContainer r">
           <div class="container px-5 py-16 mx-auto">
-            <div class="flex flex-wrap -m-4">
+            <div class="flex flex-wrap">
               <form
                 @submit.prevent="editProfil"
                 class="bg-red-900 border-2 border-gray-200 p-6 rounded-lg"
@@ -106,7 +106,7 @@
                 </div>
 
                 <div
-                  class="boxButton p-2 m-2 text-red-600 bg-transparent font-semibold hover:bg-red-500 hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+                  class="boxButton p-2 mt-6 m-2 text-gray-200 bg-transparent font-semibold hover:bg-red-500 hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
                 >
                   <input type="submit" value="Valider les modifications" />
                 </div>
