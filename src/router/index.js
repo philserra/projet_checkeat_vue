@@ -16,6 +16,7 @@ import CreateMenu from "../views/menu/CreateMenu.vue";
 import MenuSuccess from "../views/menu/MenuSuccess.vue";
 import MenuDelete from "../views/menu/MenuDelete.vue";
 import ListeResto from "../views/guests/ListeResto.vue";
+import ShowMenu from "../views/guests/ShowMenu.vue";
 import App from "@/App.vue";
 
 const routes = [
@@ -129,6 +130,12 @@ const routes = [
     path: "/guests",
     name: "listeResto",
     component: ListeResto,
+  },
+
+  {
+    path: "/guests/showmenu",
+    name: "ShowMenu",
+    component: ShowMenu,
   },
 ];
 

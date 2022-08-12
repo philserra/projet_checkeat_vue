@@ -168,6 +168,7 @@
                 </div>
 
                 <button
+                  @click="show"
                   type="submit"
                   class="inline-block p-2 text-white bg-red-500 hover:bg-red-600 font-semibold hover:text-white py-2 px-4 hover:border-transparent rounded"
                 >
@@ -187,6 +188,7 @@ export default {
   data() {
     return {
       liste: [],
+      // show: [],
     };
   },
   async mounted() {
@@ -203,6 +205,12 @@ export default {
     const data = await response.json();
 
     this.liste = data.restaurants;
+  },
+
+  methods: {
+    show() {
+      this.$router.push("/guests/ShowMenu");
+    },
   },
 };
 </script>

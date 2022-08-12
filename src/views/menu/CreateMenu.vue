@@ -24,6 +24,16 @@
                     class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
                     @submit.prevent="register"
                   >
+                    <div class="" v-for="elem in user_restaurant" :key="elem">
+                      <select
+                        name="id_restaurant"
+                        v-model="id_restaurant"
+                        id=""
+                      >
+                        <option type="number">{{ elem.id_restaurant }}</option>
+                      </select>
+                    </div>
+
                     <div class="input-container mb-4">
                       <label
                         class="block text-gray-700 text-sm font-bold mb-2"
@@ -170,6 +180,7 @@ export default {
       tva: "",
       priceTtc: "",
       id_restaurant: "",
+      user_restaurant: [],
     };
   },
 
@@ -181,11 +192,11 @@ export default {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       },
-      response = await fetch("http://127.0.0.1:8000/api/menu", options);
+      response = await fetch("http://127.0.0.1:8000/api/test", options);
 
     const data = await response.json();
-
-    this.tasks = data.liste;
+    console.log(data.info);
+    this.user_restaurant = data.info;
   },
 
   methods: {
