@@ -7,129 +7,185 @@
     "
   >
     <div
-      class="list max-w-7xl bg-opacity-75 mx-auto h-full sm:px-6 lg:px-8 p-10"
+      class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden"
+      style="max-width: 1000px"
     >
-      <div class="bg-black overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-6 bg-black">
-          <div class="w-full max-w-xs">
-            <div class="register">
-              <h2 class="titleRegister text-red-600 text-lg p-2 font-black">
-                Veuillez-vous inscrire sur cette page
-              </h2>
+      <div class="md:flex w-full">
+        <div
+          class="hidden md:block w-1/2 bg-red-500 bg-cover bg-no-repeat bg-center"
+        >
+          <video
+            autoplay
+            loop
+            muted
+            class="z-10 w-auto min-h-full object-cover"
+          >
+            <source
+              src="https://media.vidfy.com/public/32143/conversions/import_61408255372851.01740089-video-preview.mp4?v=1631617752"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+          <div class="text-center mb-10">
+            <h2 class="font-bold text-3xl text-red-600">
+              Devenez notre partenaire
+            </h2>
+            <p>Remplissez les champs</p>
+          </div>
 
-              <div class="wrapper">
-                <div id="mainContainer" class="mainContainer">
-                  <!-- <button @click="accueil()">Page principale</button> -->
-                  <form
-                    class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
-                    @submit.prevent="register"
+          <form class="" @submit.prevent="register">
+            <div class="flex -mx-3">
+              <div class="w-1/2 px-3 mb-5">
+                <label class="text-xs font-semibold px-1" for="lastname"
+                  >Nom</label
+                >
+
+                <div class="flex">
+                  <div
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
                   >
-                    <div class="input-container mb-4">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="lastname"
-                      ></label>
-                      <input
-                        type="text"
-                        class="lastnameRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="lastname"
-                        v-model="lastname"
-                        placeholder="Nom"
-                        required
-                      />
-                    </div>
+                    <i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"
+                    ></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500"
+                    id="lastname"
+                    v-model="lastname"
+                    placeholder="Nom"
+                    required
+                  />
+                </div>
+              </div>
 
-                    <div class="input-container mb-6">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="firstname"
-                      ></label>
-                      <input
-                        type="text"
-                        class="firstnameRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="firstname"
-                        v-model="firstname"
-                        placeholder="Prénom"
-                        required
-                      />
-                    </div>
-
-                    <div class="input-container mb-6">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="siret"
-                      ></label>
-                      <input
-                        type="number"
-                        class="siretRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="siret"
-                        v-model="siret"
-                        placeholder="Numéro Siret"
-                        required
-                      />
-                    </div>
-
-                    <div class="input-container mb-6">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="email"
-                      ></label>
-                      <input
-                        type="email"
-                        class="emailRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="email"
-                        v-model="email"
-                        placeholder="Votre email"
-                        required
-                      />
-                    </div>
-
-                    <div class="input-container mb-6">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="phone"
-                      ></label>
-                      <input
-                        type="text"
-                        class="phoneRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="phone"
-                        v-model="phone"
-                        placeholder="Téléphone"
-                        required
-                      />
-                    </div>
-
-                    <div class="input-container mb-6">
-                      <label
-                        class="block text-gray-700 text-sm font-bold mb-2"
-                        for="password"
-                      ></label>
-                      <input
-                        type="password"
-                        class="passwordRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="password"
-                        v-model="password"
-                        placeholder="Mot de passe"
-                        required
-                      />
-                    </div>
-
-                    <div class="boxButton">
-                      <input
-                        class="inline-block align-baseline font-black p-2 text-sm border-2 border-red-500 rounded text-red-500 hover:text-red-800"
-                        type="submit"
-                        value="Valider Inscription"
-                      />
-                    </div>
-                  </form>
+              <div class="w-1/2 px-3 mb-5">
+                <label class="text-xs font-semibold px-1" for="firstname"
+                  >Prénom</label
+                >
+                <div class="flex">
+                  <div
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                  >
+                    <i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"
+                    ></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="firstnameRegister w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500"
+                    id="firstname"
+                    v-model="firstname"
+                    placeholder="Prénom"
+                    required
+                  />
                 </div>
               </div>
             </div>
-          </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-5">
+                <label class="text-xs font-semibold px-1" for="siret"
+                  >SIRET</label
+                >
+                <div class="flex">
+                  <input
+                    type="number"
+                    class="siretRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="siret"
+                    v-model="siret"
+                    placeholder="Numéro Siret"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-5">
+                <label class="text-xs font-semibold px-1" for="email"
+                  >Email</label
+                >
+                <div class="flex">
+                  <div
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                  >
+                    <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
+                  </div>
+                  <input
+                    type="email"
+                    class="emailRegister w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500"
+                    id="email"
+                    v-model="email"
+                    placeholder="Votre email"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-12">
+                <label class="text-xs font-semibold px-1" for="phone"
+                  >Télephone</label
+                >
+                <div class="flex">
+                  <div
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                  >
+                    <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="phoneRegister w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500"
+                    placeholder="Télephone"
+                    id="phone"
+                    v-model="phone"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-12">
+                <label class="text-xs font-semibold px-1" for="password"
+                  >Mot de passe</label
+                >
+                <div class="flex">
+                  <div
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                  >
+                    <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                  </div>
+                  <input
+                    type="password"
+                    class="passwordRegister w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500"
+                    placeholder="************"
+                    id="password"
+                    v-model="password"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-5">
+                <input
+                  class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-red-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  type="submit"
+                  value="Valider Inscription"
+                />
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+
   <p>{{ message }}</p>
 </template>
 
@@ -191,3 +247,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css");
+</style>

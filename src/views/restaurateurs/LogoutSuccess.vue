@@ -29,9 +29,9 @@ export default {
       const data = await response.json();
 
       localStorage.removeItem("token", data.access_token);
-      //   location = "http://localhost:8080/";
-      this.$router.push({ name: "home" });
-      //   window.location.reload();
+      location = "http://localhost:8080/";
+      // this.$router.replace({ path: "/" });
+      window.location.reload();
     },
   },
 };

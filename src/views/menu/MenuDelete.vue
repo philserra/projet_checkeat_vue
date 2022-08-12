@@ -11,7 +11,7 @@
     </h1>
     <button
       class="p-2 mb-64 m-2 text-gray-200 text-lg bg-transparent font-black hover:bg-red-500 hover:text-white py-2 px-4 border-2 border-red-500 hover:border-transparent rounded"
-      click="getDashboard()"
+      @click="getDashboard()"
     >
       Tableau de bord
     </button>

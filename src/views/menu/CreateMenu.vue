@@ -14,7 +14,7 @@
           <div class="w-full max-w-xs">
             <div class="register">
               <h2 class="titleRegister text-red-600 text-lg p-2 font-black">
-                Creer votre Menu
+                Personaliser votre Carte
               </h2>
 
               <div class="wrapper">
@@ -105,7 +105,7 @@
             </div>
 
             <div class="list">
-              <h2 class="text-red-600 text-3xl p-4">Liste des plats</h2>
+              <h2 class="text-red-600 text-3xl p-4">La Carte</h2>
               <ul>
                 <li v-for="task in tasks" :key="task.id">
                   <div

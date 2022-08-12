@@ -16,11 +16,12 @@ import CreateMenu from "../views/menu/CreateMenu.vue";
 import MenuSuccess from "../views/menu/MenuSuccess.vue";
 import MenuDelete from "../views/menu/MenuDelete.vue";
 import ListeResto from "../views/guests/ListeResto.vue";
+import App from "@/App.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "homeview",
     component: HomeView,
   },
 
