@@ -20,128 +20,128 @@ import ShowMenu from "../views/guests/ShowMenu.vue";
 import App from "@/App.vue";
 
 const routes = [
-  {
-    path: "/",
-    name: "homeview",
-    component: HomeView,
-  },
+    {
+        path: "/",
+        name: "homeview",
+        component: HomeView,
+    },
 
-  // Login et Dashboard
+    // Login et Dashboard
 
-  {
-    path: "/restaurateurs/connexion",
-    name: "connexion",
-    component: Connexion,
-  },
+    {
+        path: "/restaurateurs/connexion",
+        name: "connexion",
+        component: Connexion,
+    },
 
-  {
-    path: "/restaurateurs/dashboard",
-    name: "dashboard",
-    component: Dashboard,
-  },
+    {
+        path: "/restaurateurs/dashboard",
+        name: "dashboard",
+        component: Dashboard,
+    },
 
-  // Restaurateurs
+    // Restaurateurs
 
-  {
-    path: "/restaurateurs/create",
-    name: "create",
-    component: Create,
-  },
+    {
+        path: "/restaurateurs/create",
+        name: "create",
+        component: Create,
+    },
 
-  {
-    path: "/restaurateurs/success",
-    name: "success",
-    component: Success,
-  },
+    {
+        path: "/restaurateurs/success",
+        name: "success",
+        component: Success,
+    },
 
-  {
-    path: "/restaurateurs/edit",
-    name: "edit",
-    component: Edit,
-  },
+    {
+        path: "/restaurateurs/edit",
+        name: "edit",
+        component: Edit,
+    },
 
-  {
-    path: "/restaurateurs/editsuccess",
-    name: "editsuccess",
-    component: EditSuccess,
-  },
+    {
+        path: "/restaurateurs/editsuccess",
+        name: "editsuccess",
+        component: EditSuccess,
+    },
 
-  {
-    path: "/restaurateurs/delete",
-    name: "delete",
-    component: Delete,
-  },
+    {
+        path: "/restaurateurs/delete",
+        name: "delete",
+        component: Delete,
+    },
 
-  {
-    path: "/restaurateurs/profil",
-    name: "profil",
-    component: Profil,
-  },
+    {
+        path: "/restaurateurs/profil",
+        name: "profil",
+        component: Profil,
+    },
 
-  // Restaurants
+    // Restaurants
 
-  {
-    path: "/restaurants/create",
-    name: "createResto",
-    component: CreateResto,
-  },
+    {
+        path: "/restaurants/create",
+        name: "createResto",
+        component: CreateResto,
+    },
 
-  {
-    path: "/restaurants/success",
-    name: "createSuccess",
-    component: Success_resto,
-  },
+    {
+        path: "/restaurants/success",
+        name: "createSuccess",
+        component: Success_resto,
+    },
 
-  {
-    path: "/restaurants/edit/:id",
-    name: "editResto",
-    component: Edit_resto,
-  },
+    {
+        path: "/restaurants/edit/:id",
+        name: "editResto",
+        component: Edit_resto,
+    },
 
-  {
-    path: "/restaurants/delete",
-    name: "deleteResto",
-    component: DeleteResto,
-  },
+    {
+        path: "/restaurants/delete",
+        name: "deleteResto",
+        component: DeleteResto,
+    },
 
-  // Menu
+    // Menu
 
-  {
-    path: "/menu/create",
-    name: "createMenu",
-    component: CreateMenu,
-  },
+    {
+        path: "/menu",
+        name: "createMenu",
+        component: CreateMenu,
+    },
 
-  {
-    path: "/menu/menusuccess",
-    name: "menuSuccess",
-    component: MenuSuccess,
-  },
+    {
+        path: "/menu/menusuccess",
+        name: "menuSuccess",
+        component: MenuSuccess,
+    },
 
-  {
-    path: "/menu/delete",
-    name: "menuDelete",
-    component: MenuDelete,
-  },
+    {
+        path: "/menu/delete",
+        name: "menuDelete",
+        component: MenuDelete,
+    },
 
-  // Guests
+    // Guests
 
-  {
-    path: "/guests",
-    name: "listeResto",
-    component: ListeResto,
-  },
+    {
+        path: "/guests",
+        name: "listeResto",
+        component: ListeResto,
+    },
 
-  {
-    path: "/guests/showmenu",
-    name: "ShowMenu",
-    component: ShowMenu,
-  },
+    {
+        path: "/guests/showmenu",
+        name: "ShowMenu",
+        component: ShowMenu,
+    },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
 });
 
 export default router;
