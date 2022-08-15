@@ -85,11 +85,13 @@
 </template>
 
 <script>
+const idRestaurantMenu = localStorage.getItem("id_restaurant_menu");
+
 export default {
     data() {
         return {
             menu: [],
-            // show: [],
+            id_restaurant: idRestaurantMenu,
         };
     },
 
@@ -103,7 +105,7 @@ export default {
         };
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/guestmenu",
+            "http://127.0.0.1:8000/api/guestmenu/" + this.id_restaurant,
             options
         );
 

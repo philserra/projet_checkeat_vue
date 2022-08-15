@@ -187,7 +187,7 @@
                                 </div>
 
                                 <button
-                                    @click="show"
+                                    @click="show(elem.id)"
                                     type="submit"
                                     class="inline-block p-2 text-white bg-red-500 hover:bg-red-600 font-semibold hover:text-white py-2 px-4 hover:border-transparent rounded"
                                 >
@@ -230,8 +230,10 @@ export default {
     },
 
     methods: {
-        show() {
-            this.$router.push("/guests/ShowMenu");
+        show(id) {
+            localStorage.setItem("id_restaurant_menu", id);
+            document.location.href = "/guests/ShowMenu";
+            // this.$router.push("/guests/ShowMenu");
         },
     },
 };
