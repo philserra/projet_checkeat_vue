@@ -292,7 +292,7 @@
     </nav>
 
     <nav v-if="token">
-      <p class="inline-block align-center justify-center underline">
+      <p class="inline-block align-center justify-center">
         Bonjour {{ firstname }} {{ lastname }}
       </p>
       <!-- <router-link
@@ -316,19 +316,29 @@
       </button> -->
 
       <div class="inline-block">
-        <div class="relative">
+        <div class="dropdown relative px-2 transition">
           <!-- Dropdown toggle button -->
           <button
             @click="show = !show"
-            class="flex items-center m-2 p-2 border-2 border-red-700 hover:bg-red-500 hover:text-white text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            class="relative z-10 block m-2 overflow-hidden focus:outline-none leading-loose align-middle px-4 py-1 rounded cursor-pointer text-sm bg-red-600 text-black hover:bg-gray-100 hover:text-red-600"
           >
-            <span class="sr-only">Votre Menu</span>
-            <img
-              class="h-8 w-8 rounded-full"
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-            />
+            <span class="mr-1">Options</span
+            ><svg
+              class="inline-block fill-current h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+              />
+            </svg>
           </button>
+          <button
+            v-if="show"
+            @click="show = false"
+            tabindex="-1"
+            class="fixed top-0 inset-0 h-full w-full bg-black opacity-0 cursor-default"
+          ></button>
 
           <!-- Dropdown menu -->
           <div
