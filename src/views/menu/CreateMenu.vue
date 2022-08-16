@@ -234,6 +234,7 @@ export default {
                 options
             );
             const data = await response.json();
+            window.location.reload();
         },
 
         async deleteMenu(id) {
