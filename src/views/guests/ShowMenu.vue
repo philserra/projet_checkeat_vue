@@ -306,19 +306,19 @@ export default {
             this.price.push(value);
         },
 
-        addPlat(plat, value) {
+        addPlat(plat, value, id) {
             const course = { name: plat, price: value, id: this.id++ };
             this.command.push(course);
             this.price.push(value);
             // console.log(this.command);
         },
-        addDessert(dessert, value) {
+        addDessert(dessert, value, id) {
             const desserts = { name: dessert, price: value, id: this.id++ };
             this.command.push(desserts);
             this.price.push(value);
             // console.log(this.command);
         },
-        addBoissons(boisson, value) {
+        addBoissons(boisson, value, id) {
             const drinks = { name: boisson, price: value, id: this.id++ };
             this.command.push(drinks);
             this.price.push(value);
@@ -332,31 +332,6 @@ export default {
 
                 this.total = sum;
             }
-        },
-    },
-    methods: {
-        addEntree(entree, value, id) {
-            const starter = { name: entree, price: value, id: this.id++ };
-            // console.log(starter);
-            this.command.push(starter);
-            this.price.push(value);
-
-            // console.log(this.price);
-
-            // console.log(this.command);
-        },
-
-        addPlat(plat, value) {
-            const course = plat + " " + value;
-            this.command.push(course);
-            this.price.push(value);
-            // console.log(this.command);
-        },
-
-        deleteAddition(index) {
-            // je splice grâce a l'index car index pour la commande et le price possède le même
-            this.command.splice(index, 1);
-            this.price.splice(index, 1);
         },
     },
 };
