@@ -5,189 +5,247 @@
             background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
         "
     >
-        <div class="flex items-center justify-center py-2 px-1">
-            <div class="w-full sm:px-6">
-                <div
-                    class="px-1 md:px-10 py-1 md:py-3 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg"
-                >
-                    <div class="p-2">
+        <div class="container mx-auto py-10">
+            <div class="flex shadow-md">
+                <div class="w-3/4 bg-black px-8 bg-opacity-75 py-10 rounded-lg">
+                    <div class="text-center border-b pb-8 shadow-2xl">
                         <h1
-                            class="text-red-600 text-3xl p-4 text-center font-black shadow-lg"
+                            class="font-semibold text-red-600 text-3xl"
+                            tabindex="0"
                         >
                             Choisissez votre menu
                         </h1>
                     </div>
+
                     <ul>
-                        <section class="text-gray-600 text-sm">
-                            <div class="container px-5 py-24 mx-auto">
-                                <div class="flex flex-wrap -m-1">
-                                    <div class="p-2 lg:w-1/4">
-                                        <div
-                                            class="h-full bg-gray-100 bg-opacity-75 px-6 pt-6 pb-24 rounded-lg overflow-hidden text-center relative"
+                        <div
+                            class="w-full dark:bg-gray-400 bg-opacity-80 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-300 ease-out rounded-tl-lg rounded-tr-lg"
+                        >
+                            <div class="p-2">
+                                <h2 class="text-lg font-black text-red-600">
+                                    Entrées
+                                </h2>
+                            </div>
+                            <li v-for="elem in menu" :key="elem.id">
+                                <div v-if="elem.category === 'entree'">
+                                    <div
+                                        class="w-48 pl-2 justify-between inline-block"
+                                    >
+                                        <button
+                                            @click="
+                                                addEntree(
+                                                    elem.name,
+                                                    elem.priceTtc,
+                                                    elem.id
+                                                )
+                                            "
+                                            class="text-sm font-black md:text-lg text-gray-900 border-solid border-red-600"
                                         >
-                                            <p
-                                                class="text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                            >
-                                                Entrées
-                                            </p>
-                                            <li
-                                                v-for="elem in menu"
-                                                :key="elem.id"
-                                            >
-                                                <div
-                                                    v-if="
-                                                        elem.category ===
-                                                        'entree'
-                                                    "
-                                                >
-                                                    <button
-                                                        @click="
-                                                            addEntree(
-                                                                elem.name,
-                                                                elem.priceTtc,
-                                                                elem.id
-                                                            )
-                                                        "
-                                                        class="inline-block p-1 rounded border-2 border-red-600 text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                                    >
-                                                        {{ elem.name }}
-                                                    </button>
-                                                    <span
-                                                        class="inline-block text-lg font-black md:text-lg text-gray-100 line-clamp-1"
-                                                    >
-                                                        {{ elem.priceTtc }}€
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        </div>
+                                            {{ elem.name }}
+                                        </button>
                                     </div>
-
-                                    <div class="p-2 lg:w-1/4">
-                                        <div
-                                            class="h-full text-sm bg-gray-100 bg-opacity-75 px-16 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+                                    <div
+                                        class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
+                                    ></div>
+                                    <div class="inline-block">
+                                        <span
+                                            class="text-lg font-black md:text-lg text-gray-900"
                                         >
-                                            <p
-                                                class="text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                            >
-                                                Plats
-                                            </p>
-                                            <li
-                                                v-for="elem in menu"
-                                                :key="elem.id"
-                                            >
-                                                <div
-                                                    v-if="
-                                                        elem.category === 'plat'
-                                                    "
-                                                >
-                                                    <button
-                                                        class="inline-block p-1 rounded border-2 border-red-600 text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                                        @click="
-                                                            addPlat(
-                                                                elem.name,
-                                                                elem.priceTtc,
-                                                                elem.id
-                                                            )
-                                                        "
-                                                    >
-                                                        <span
-                                                            class="inline-block text-red-600 font-bold"
-                                                            >{{
-                                                                elem.category
-                                                            }}:
-                                                        </span>
-                                                        {{ elem.name }} -
-                                                        <span
-                                                            class="inline-block text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                                            >Prix:
-                                                        </span>
-                                                        {{ elem.priceTtc }} €
-                                                    </button>
-                                                </div>
-                                            </li>
-                                        </div>
-                                    </div>
-
-                                    <div class="p-2 lg:w-1/4">
-                                        <div
-                                            class="h-full bg-gray-100 bg-opacity-75 px-16 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
-                                        >
-                                            <p
-                                                class="text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                            >
-                                                Desserts
-                                            </p>
-                                            <li
-                                                v-for="elem in menu"
-                                                :key="elem.id"
-                                            >
-                                                <p
-                                                    class="inline-block text-lg font-black md:text-lg text-gray-100 line-clamp-1"
-                                                >
-                                                    <span
-                                                        class="inline-block text-red-600 font-bold"
-                                                        >{{ elem.category }}:
-                                                    </span>
-                                                    {{ elem.name }} -
-                                                    <span
-                                                        class="inline-block text-lg font-black md:text-lg text-gray-100 line-clamp-1"
-                                                        >Prix:
-                                                    </span>
-                                                    {{ elem.priceTtc }} €
-                                                </p>
-                                            </li>
-                                        </div>
-                                    </div>
-
-                                    <div class="p-2 lg:w-1/4">
-                                        <div
-                                            class="h-full bg-gray-100 bg-opacity-75 px-16 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
-                                        >
-                                            <p
-                                                class="text-sm font-black md:text-lg text-gray-100 line-clamp-1"
-                                            >
-                                                Boissons
-                                            </p>
-                                            <li
-                                                v-for="elem in menu"
-                                                :key="elem.id"
-                                            >
-                                                <p
-                                                    class="inline-block text-lg font-black md:text-lg text-gray-100 line-clamp-1"
-                                                >
-                                                    <span
-                                                        class="inline-block text-red-600 font-bold"
-                                                        >{{ elem.category }}:
-                                                    </span>
-                                                    {{ elem.name }} -
-                                                    <span
-                                                        class="inline-block text-lg font-black md:text-lg text-gray-100 line-clamp-1"
-                                                        >Prix:
-                                                    </span>
-                                                    {{ elem.priceTtc }} €
-                                                </p>
-                                            </li>
-                                        </div>
+                                            {{ elem.priceTtc }} €
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </ul>
-                    <div class="command border-2 border-red-600 text-gray-100">
-                        <p class="">Votre commande</p>
-                        <div v-for="(elem, index) in command" :key="elem.id">
-                            <p class="inline-block">
-                                {{ elem.name }} , {{ elem.price }}
-                            </p>
-                            <button
-                                @click="deleteAddition(index)"
-                                class="inline-block text-red-600 border border-red-600"
-                            >
-                                -
-                            </button>
+                            </li>
                         </div>
 
-                        <p v-bind="addition">total: {{ total }}</p>
+                        <div
+                            class="w-full dark:bg-gray-400 bg-opacity-80 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out"
+                        >
+                            <div class="p-2">
+                                <h2
+                                    class="text-sm md:text-lg font-black text-red-600"
+                                >
+                                    Plats
+                                </h2>
+                            </div>
+                            <li v-for="elem in menu" :key="elem.id">
+                                <div v-if="elem.category === 'plat'">
+                                    <div
+                                        class="w-48 pl-2 justify-between inline-block"
+                                    >
+                                        <button
+                                            class="inline-block text-sm md:text-lg text-gray-900"
+                                            @click="
+                                                addPlat(
+                                                    elem.name,
+                                                    elem.priceTtc,
+                                                    elem.id
+                                                )
+                                            "
+                                        >
+                                            <span
+                                                class="inline-block text-gray-900 font-bold"
+                                            >
+                                                {{ elem.name }}
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
+                                    ></div>
+                                    <div class="inline-block">
+                                        <span
+                                            class="text-lg font-black md:text-lg text-gray-900"
+                                            >{{ elem.priceTtc }} €
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+
+                        <div
+                            class="w-full dark:bg-gray-400 bg-opacity-80 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out"
+                        >
+                            <div class="p-2">
+                                <h2
+                                    class="text-sm md:text-lg font-black text-red-600 line-clamp-1"
+                                >
+                                    Desserts
+                                </h2>
+                            </div>
+                            <li v-for="elem in menu" :key="elem.id">
+                                <div v-if="elem.category === 'dessert'">
+                                    <div
+                                        class="w-48 pl-2 justify-between inline-block"
+                                    >
+                                        <button
+                                            class="inline-block text-lg md:text-lg text-gray-900"
+                                            @click="
+                                                addDessert(
+                                                    elem.name,
+                                                    elem.priceTtc,
+                                                    elem.id
+                                                )
+                                            "
+                                        >
+                                            <span
+                                                class="inline-block text-gray-800 font-bold"
+                                                >{{ elem.name }}
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
+                                    ></div>
+
+                                    <div class="inline-block">
+                                        <span
+                                            class="inline-block font-black text-lg md:text-lg text-gray-900"
+                                            >{{ elem.priceTtc }} €
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+
+                        <div
+                            class="w-full dark:bg-gray-400 bg-opacity-80 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out rounded-bl-lg rounded-br-lg"
+                        >
+                            <div class="p-2">
+                                <h2
+                                    class="text-sm md:text-lg font-black text-red-600"
+                                >
+                                    Boissons
+                                </h2>
+                            </div>
+                            <li v-for="elem in menu" :key="elem.id">
+                                <div v-if="elem.category === 'boisson'">
+                                    <div
+                                        class="w-48 pl-2 justify-between inline-block"
+                                    >
+                                        <button
+                                            class="inline-block text-lg font-black md:text-lg text-gray-900"
+                                            @click="
+                                                addBoissons(
+                                                    elem.name,
+                                                    elem.priceTtc,
+                                                    elem.id
+                                                )
+                                            "
+                                        >
+                                            <span
+                                                class="inline-block text-gray-900 font-bold"
+                                                >{{ elem.name }}
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
+                                    ></div>
+                                    <div class="inline-block">
+                                        <span
+                                            class="inline-block text-lg font-black md:text-lg text-gray-900"
+                                            >{{ elem.priceTtc }} €
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div
+                    id="summary"
+                    class="w-1/4 px-8 py-10 rounded-lg bg-gray-400 bg-opacity-90"
+                >
+                    <h1
+                        class="font-semibold text-black text-center text-3xl border-b pb-8"
+                    >
+                        Votre commande
+                    </h1>
+                    <div v-for="(elem, index) in command" :key="elem.id">
+                        <div class="flex justify-between mt-5 mb-2">
+                            <span class="font-semibold text-lg">{{
+                                elem
+                            }}</span>
+                            <button
+                                class="font-semibold text-sm"
+                                @click="deleteAddition(index)"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="30"
+                                    height="30"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 24 24"
+                                    class="inline-block w-5 h-5 xl:w-4 xl:h-4 mr-3 fill-current text-red-600"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1ZM8 11a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-t mt-8">
+                        <div
+                            class="flex font-black justify-between py-6 uppercase"
+                        >
+                            <span class="text-lg" v-bind="addition"
+                                >total :</span
+                            >
+                            <span class="text-xl font-black"
+                                >{{ total }} €</span
+                            >
+                        </div>
+                        <button
+                            class="dark:bg-red-600 font-semibold hover:bg-red-700 py-3 text-sm text-white uppercase w-full rounded-lg"
+                        >
+                            Commander
+                        </button>
                     </div>
                 </div>
             </div>
@@ -244,6 +302,42 @@ export default {
             // console.log(starter);
             this.command.push(starter);
             this.price.push(value);
+        },
+
+        addPlat(plat, value) {
+            const course = plat + " " + value + " €";
+            this.command.push(course);
+            this.price.push(value);
+            // console.log(this.command);
+        },
+        addDessert(dessert, value) {
+            const desserts = dessert + " " + value + " €";
+            this.command.push(desserts);
+            this.price.push(value);
+            // console.log(this.command);
+        },
+        addBoissons(boisson, value) {
+            const drinks = boisson + " " + value + " €";
+            this.command.push(drinks);
+            this.price.push(value);
+            // console.log(this.command);
+        },
+    },
+    computed: {
+        addition() {
+            if (this.price != 0) {
+                const sum = this.price.reduce((a, b) => a + b);
+
+                this.total = sum;
+            }
+        },
+    },
+    methods: {
+        addEntree(entree, value, id) {
+            const starter = { name: entree, price: value, id: this.id++ };
+            // console.log(starter);
+            this.command.push(starter);
+            this.price.push(value);
 
             // console.log(this.price);
 
@@ -265,3 +359,9 @@ export default {
     },
 };
 </script>
+
+<style>
+/* #summary {
+  background-color: #f6f6f6;
+} */
+</style>
