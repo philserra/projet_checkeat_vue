@@ -292,36 +292,35 @@ export default {
       // console.log(this.command);
     },
 
-        addPlat(plat, value, id) {
-            const course = { name: plat, price: value, id: this.id++ };
-            this.command.push(course);
-            this.price.push(value);
-            // console.log(this.command);
-        },
-        addDessert(dessert, value, id) {
-            const desserts = { name: dessert, price: value, id: this.id++ };
-            this.command.push(desserts);
-            this.price.push(value);
-            // console.log(this.command);
-        },
-        addBoissons(boisson, value, id) {
-            const drinks = { name: boisson, price: value, id: this.id++ };
-            this.command.push(drinks);
-            this.price.push(value);
-            // console.log(this.command);
-        },
-        deleteAddition(index) {
-            // je splice grâce a l'index car index pour la commande et le price possède le même
-            this.command.splice(index, 1);
-            this.price.splice(index, 1);
-        },
+    addPlat(plat, value, id) {
+      const course = { name: plat, price: value, id: this.id++ };
+      this.command.push(course);
+      this.price.push(value);
+      // console.log(this.command);
     },
-
+    addDessert(dessert, value, id) {
+      const desserts = { name: dessert, price: value, id: this.id++ };
+      this.command.push(desserts);
+      this.price.push(value);
+      // console.log(this.command);
+    },
+    addBoissons(boisson, value, id) {
+      const drinks = { name: boisson, price: value, id: this.id++ };
+      this.command.push(drinks);
+      this.price.push(value);
+      // console.log(this.command);
+    },
     deleteAddition(index) {
       // je splice grâce a l'index car index pour la commande et le price possède le même
       this.command.splice(index, 1);
       this.price.splice(index, 1);
     },
+  },
+
+  deleteAddition(index) {
+    // je splice grâce a l'index car index pour la commande et le price possède le même
+    this.command.splice(index, 1);
+    this.price.splice(index, 1);
   },
 };
 </script>
