@@ -307,19 +307,19 @@ export default {
         },
 
         addPlat(plat, value) {
-            const course = plat + " " + value + " €";
+            const course = { name: plat, price: value, id: this.id++ };
             this.command.push(course);
             this.price.push(value);
             // console.log(this.command);
         },
         addDessert(dessert, value) {
-            const desserts = dessert + " " + value + " €";
+            const desserts = { name: dessert, price: value, id: this.id++ };
             this.command.push(desserts);
             this.price.push(value);
             // console.log(this.command);
         },
         addBoissons(boisson, value) {
-            const drinks = boisson + " " + value + " €";
+            const drinks = { name: boisson, price: value, id: this.id++ };
             this.command.push(drinks);
             this.price.push(value);
             // console.log(this.command);
