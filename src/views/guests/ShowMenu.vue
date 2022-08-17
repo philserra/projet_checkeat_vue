@@ -205,9 +205,9 @@
                     </h1>
                     <div v-for="(elem, index) in command" :key="elem.id">
                         <div class="flex justify-between mt-5 mb-2">
-                            <span class="font-semibold text-lg">{{
-                                elem
-                            }}</span>
+                            <span class="font-semibold text-lg"
+                                >{{ elem.name }} , {{ elem.price }}</span
+                            >
                             <button
                                 class="font-semibold text-sm"
                                 @click="deleteAddition(index)"
@@ -293,6 +293,8 @@ export default {
                 const sum = this.price.reduce((a, b) => a + b);
 
                 this.total = sum;
+            } else {
+                this.total = 0;
             }
         },
     },
