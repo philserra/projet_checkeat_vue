@@ -324,6 +324,11 @@ export default {
             this.price.push(value);
             // console.log(this.command);
         },
+        deleteAddition(index) {
+            // je splice grâce a l'index car index pour la commande et le price possède le même
+            this.command.splice(index, 1);
+            this.price.splice(index, 1);
+        },
     },
     computed: {
         addition() {
