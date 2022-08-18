@@ -243,9 +243,13 @@
                         </div>
                         <button
                             class="dark:bg-red-600 font-semibold hover:bg-red-700 py-3 text-sm text-white uppercase w-full rounded-lg"
+                            @click="ordered"
                         >
                             Commander
                         </button>
+                        <h1 class="text-xl font-black" v-if="message">
+                            {{ message }}
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -263,8 +267,12 @@ export default {
             id_restaurant: idRestaurantMenu,
             command: [],
             price: [],
-            total: "",
+            total: 0,
             id: 0,
+            nameOrdered: "",
+            priceOrdered: "",
+            totalOrdered: "",
+            message: "",
         };
     },
 
@@ -299,6 +307,37 @@ export default {
         },
     },
     methods: {
+        async ordered() {
+            for (let i in this.command) {
+                this.nameOrdered = this.command[i].name;
+                this.priceOrdered = this.command[i].price;
+
+                console.log(this.nameOrdered);
+
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: this.nameOrdered,
+                        price: this.priceOrdered,
+                        total: this.total,
+                        id_restaurant: idRestaurantMenu,
+                    }),
+                };
+                // FETCH pour envoyé la requête sur l'API
+                const response = await fetch(
+                    "http://127.0.0.1:8000/api/ordered",
+                    options
+                );
+                const data = await response.json();
+                console.log(data.message);
+
+                this.message = data.message;
+            }
+        },
         addEntree(entree, value, id) {
             const starter = { name: entree, price: value, id: this.id++ };
             // console.log(starter);
@@ -330,15 +369,18 @@ export default {
             this.price.splice(index, 1);
         },
     },
-    computed: {
-        addition() {
-            if (this.price != 0) {
-                const sum = this.price.reduce((a, b) => a + b);
+    // computed: {
+    //     addition() {
+    //         if (this.price != 0) {
+    //             const sum = this.price.reduce((a, b) => a + b);
 
-                this.total = sum;
-            }
-        },
-    },
+    //             this.total = sum;
+    //         }
+    //         if ((this.command = [])) {
+    //             this.total = 0;
+    //         }
+    //     },
+    // },
 };
 </script>
 
