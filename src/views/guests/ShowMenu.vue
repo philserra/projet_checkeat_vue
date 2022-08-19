@@ -205,6 +205,7 @@
 
 <script>
 const idRestaurantMenu = localStorage.getItem("id_restaurant_menu");
+const status = "en cours";
 
 export default {
   data() {
@@ -220,7 +221,7 @@ export default {
       totalOrdered: "",
       message: "",
       id_command: 1,
-      status: "",
+      status: status,
     };
   },
 
@@ -259,7 +260,6 @@ export default {
       for (let i in this.command) {
         this.nameOrdered = this.command[i].name;
         this.priceOrdered = this.command[i].price;
-        this.status = "En cours";
 
         console.log(this.nameOrdered);
 
@@ -275,7 +275,7 @@ export default {
             total: this.total,
             id_restaurant: idRestaurantMenu,
             id_command: 1,
-            status: this.status,
+            status: status,
           }),
         };
         // FETCH pour envoyé la requête sur l'API
