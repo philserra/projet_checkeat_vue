@@ -219,6 +219,8 @@ export default {
       priceOrdered: "",
       totalOrdered: "",
       message: "",
+      id_command: 1,
+      status: "",
     };
   },
 
@@ -257,6 +259,7 @@ export default {
       for (let i in this.command) {
         this.nameOrdered = this.command[i].name;
         this.priceOrdered = this.command[i].price;
+        this.status = "En cours";
 
         console.log(this.nameOrdered);
 
@@ -271,6 +274,8 @@ export default {
             price: this.priceOrdered,
             total: this.total,
             id_restaurant: idRestaurantMenu,
+            id_command: 1,
+            status: this.status,
           }),
         };
         // FETCH pour envoyé la requête sur l'API
@@ -282,7 +287,7 @@ export default {
         console.log(data.message);
 
         this.message = data.message;
-        const myTimeout = setTimeout(window.location.reload(), 3000);
+        //setTimeout(window.location.reload(), 5000);
       }
     },
     addEntree(entree, value, id) {

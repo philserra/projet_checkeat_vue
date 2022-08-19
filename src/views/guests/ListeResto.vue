@@ -143,7 +143,10 @@
                       />
                     </svg>
                     <span class="mt-2 xl:mt-0"
-                      >Ouverture: {{ elem.timetable }}h</span
+                      >Ouverture: {{ elem.open }}h</span
+                    >
+                    <span class="mt-2 xl:mt-0"
+                      >Fermeture: {{ elem.closed }}h</span
                     >
                   </p>
                   <p
@@ -205,6 +208,7 @@ export default {
     const data = await response.json();
 
     this.liste = data.restaurants;
+    console.log(data);
   },
 
   methods: {

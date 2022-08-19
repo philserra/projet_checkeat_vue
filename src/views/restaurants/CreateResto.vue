@@ -116,14 +116,29 @@
                     <div class="input-container mb-4">
                       <label
                         class="block text-gray-700 text-sm font-bold mb-2"
-                        for="timetable"
+                        for="open"
                       ></label>
                       <input
-                        type="text"
+                        type="time"
                         class="timetableRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="timetable"
-                        v-model="timetable"
-                        placeholder="Horaires d'ouverture"
+                        id="open"
+                        v-model="open"
+                        placeholder="Heure d'ouverture"
+                        required
+                      />
+                    </div>
+
+                    <div class="input-container mb-4">
+                      <label
+                        class="block text-gray-700 text-sm font-bold mb-2"
+                        for="closed"
+                      ></label>
+                      <input
+                        type="time"
+                        class="timetableRegister shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="closed"
+                        v-model="closed"
+                        placeholder="Heure de fermeture"
                         required
                       />
                     </div>
@@ -179,7 +194,8 @@ export default {
       city: "",
       tel: "",
       email: "",
-      timetable: "",
+      open: "",
+      closed: "",
       capacity: "",
       id_restaurateur: "",
       message: "",
@@ -220,7 +236,8 @@ export default {
           city: this.city,
           tel: this.tel,
           email: this.email,
-          timetable: this.timetable,
+          open: this.open,
+          closed: this.closed,
           capacity: this.capacity,
           id_restaurateur: this.id_restaurateur,
         }),
