@@ -336,7 +336,7 @@ export default {
                 console.log(data.message);
 
                 this.message = data.message;
-                const myTimeout = setTimeout(window.location.reload(), 3000);
+                const myTimeout = setTimeout(window.location.reload(), 5000);
             }
         },
         addEntree(entree, value, id) {
