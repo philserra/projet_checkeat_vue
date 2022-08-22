@@ -5,7 +5,7 @@
     <nav>
       <a href="/">
         <svg
-          class="h-10 w-10"
+          class="h-20 w-20 pl-7"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           width="500"
@@ -295,7 +295,7 @@
       >
     </nav>
 
-    <nav v-if="token">
+    <nav v-if="token" class="pt-3">
       <p class="inline-block align-center justify-center">
         Bonjour {{ firstname }} {{ lastname }}
       </p>

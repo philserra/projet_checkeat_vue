@@ -19,12 +19,38 @@
       Cherchez votre restaurant
     </h3> -->
 
-    <button
+    <!-- <button
       @click="getRestaurants()"
       class="mb-24 font-black text-xl animate-bounce w-80 text-gray-200 bg-gradient-to-r from-red-900 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-600 dark:focus:ring-red-800 rounded-lg px-5 py-2.5 text-center mr-2"
     >
       Cherchez votre restaurant
-    </button>
+    </button> -->
+
+    <a
+      @click="getRestaurants()"
+      href="#_"
+      class="relative px-5 py-3 overflow-hidden font-black text-2xl text-gray-900 bg-red-600 border border-gray-100 rounded-lg shadow-inner group animate-bounce"
+    >
+      <span
+        class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-200 group-hover:w-full ease"
+      ></span>
+      <span
+        class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-200 group-hover:w-full ease"
+      ></span>
+      <span
+        class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-200 group-hover:h-full ease"
+      ></span>
+      <span
+        class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"
+      ></span>
+      <span
+        class="absolute inset-0 w-full h-full duration-300 delay-300 bg-black opacity-0 group-hover:opacity-100"
+      ></span>
+      <span
+        class="relative transition-colors duration-300 delay-200 group-hover:text-red-600 ease"
+        >Cherchez votre restaurant</span
+      >
+    </a>
   </div>
 </template>
 
