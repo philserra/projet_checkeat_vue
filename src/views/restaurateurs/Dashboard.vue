@@ -162,7 +162,10 @@
                           />
                         </svg>
                         <span class="mt-2 xl:mt-0"
-                          >Ouverture: {{ elem.timetable }}h</span
+                          >Ouverture: {{ elem.open }}h</span
+                        >
+                        <span class="mt-2 xl:mt-0"
+                          >Fermeture: {{ elem.closed }}h</span
                         >
                       </p>
 
@@ -208,6 +211,13 @@
                           @click="addMenu(elem.id)"
                         >
                           Créer / Modifier votre carte
+                        </button>
+                        <button
+                          class="p-2 m-2 text-white bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                        >
+                          <a href="/restaurants/command"
+                            >Vos commandes clients</a
+                          >
                         </button>
                       </div>
                     </div>

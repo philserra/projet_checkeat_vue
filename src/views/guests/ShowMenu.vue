@@ -243,7 +243,7 @@
                         </div>
                         <button
                             class="dark:bg-red-600 font-semibold hover:bg-red-700 py-3 text-sm text-white uppercase w-full rounded-lg"
-                            @click="ordered"
+                            @click="ordered(status)"
                         >
                             Commander
                         </button>
@@ -273,6 +273,8 @@ export default {
             priceOrdered: "",
             totalOrdered: "",
             message: "",
+            id_command: 0,
+            status: "En cours",
         };
     },
 
@@ -325,6 +327,8 @@ export default {
                         price: this.priceOrdered,
                         total: this.total,
                         id_restaurant: idRestaurantMenu,
+                        id_command: this.id_command,
+                        status: this.status,
                     }),
                 };
                 // FETCH pour envoyé la requête sur l'API
@@ -336,7 +340,7 @@ export default {
                 console.log(data.message);
 
                 this.message = data.message;
-                const myTimeout = setTimeout(window.location.reload(), 5000);
+                //setTimeout(window.location.reload(), 5000);
             }
         },
         addEntree(entree, value, id) {
