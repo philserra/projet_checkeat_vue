@@ -3,8 +3,9 @@
 
     <div v-for="(elem, key) in ordered" :key="elem.id">
         <p>{{ elem.name }}</p>
-        <p>{{ elem.price }}</p>
-        <p>{{ elem.total }}</p>
+        <p>Prix du plat : {{ elem.price }}</p>
+        <p>Total : {{ elem.total }}</p>
+        <p>Numéro de commande : {{ elem.id_command }}</p>
         <button @click="erase(key)">Supprimer</button>
     </div>
 </template>
