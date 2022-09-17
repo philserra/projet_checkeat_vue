@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "prod": "serve -s ./dist"
   },
   "dependencies": {
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
     "postcss": "^8",
+    "serve": "^14.0.1",
     "tailwindcss": "^3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
