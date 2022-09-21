@@ -172,6 +172,7 @@
 </template>
 
 <script>
+import api from "./router-api.js";
 export default {
   name: "Create",
   components: {},
@@ -212,17 +213,14 @@ export default {
 
       // FETCH pour envoyé la requête sur l'API
 
-      const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurateurs",
-        options
-      );
+      const response = await fetch(api + "api/restaurateurs", options);
 
       const data = await response.json();
 
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
-        location = "http://localhost:8080/restaurateurs/success";
+        location = api + "restaurateurs/success";
         // this.$router.push("/restaurateurs/success");
       }
     },
