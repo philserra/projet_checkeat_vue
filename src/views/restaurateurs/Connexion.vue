@@ -207,7 +207,7 @@ export default {
         }),
       };
       const response = await fetch(
-        "https://checkeat-api.osc-fr1.scalingo.io/api/login",
+        "https://checkeat-api.osc-fr1.scalingo.io/api/login/",
         options
       );
 
