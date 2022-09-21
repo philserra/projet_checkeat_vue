@@ -172,8 +172,6 @@
 </template>
 
 <script>
-import api from "@/main";
-
 export default {
   name: "Create",
   components: {},
@@ -214,14 +212,17 @@ export default {
 
       // FETCH pour envoyé la requête sur l'API
 
-      const response = await fetch(api + "api/restaurateurs", options);
+      const response = await fetch(
+        "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs",
+        options
+      );
 
       const data = await response.json();
 
       if (data.message == true) {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
-        location = api + "restaurateurs/success";
+        location = "https://checkeat.osc-fr1.scalingo.io/restaurateurs/success";
         // this.$router.push("/restaurateurs/success");
       }
     },
