@@ -16,7 +16,7 @@
             </h1>
             <button
               class="font-bold text-lg focus:ring-2 focus:ring-offset-2 focus:ring-red-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-red-600 hover:bg-red-700 focus:outline-none rounded">
-              <a href="http://localhost:8080/restaurants/create"
+              <a href="https://checkeat.osc-fr1.scalingo.io/restaurants/create"
                 >+ Ajouter un restaurant</a
               >
             </button>
@@ -261,7 +261,10 @@
                       </button>
                       <button
                         class="text-black w-56 mt-6 bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 hover:border-transparent rounded">
-                        <a href="/restaurants/command"> commandes clients</a>
+                        <a
+                          href="https://checkeat.osc-fr1.scalingo.io/restaurants/command">
+                          commandes clients</a
+                        >
                       </button>
                     </div>
                   </div>
