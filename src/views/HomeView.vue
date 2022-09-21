@@ -26,7 +26,7 @@
     <a
       @click="getRestaurants()"
       href="#_"
-      class="w-96 cursor-pointer relative inline-flex items-center justify-center p-4 px-12 py-4 overflow-hidden font-black text-red-600 transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group">
+      class="w-96 cursor-pointer relative inline-flex items-center justify-center p-4 px-12 py-6 mb-5 overflow-hidden font-black text-red-600 transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group">
       <span
         class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
         <p class="pr-2 text-2xl font-black">C'est parti</p>
