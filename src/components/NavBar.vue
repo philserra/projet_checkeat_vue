@@ -409,9 +409,7 @@ export default {
     );
 
     const data = await response.json();
-
     const profil = data.restaurateur;
-
     this.lastname = profil.lastname;
     this.firstname = profil.firstname;
   },
@@ -434,9 +432,9 @@ export default {
       const data = await response.json();
 
       localStorage.removeItem("token", data.access_token);
+      document.location.href = "/";
       // location = "http://localhost:8080/";
       // this.$router.replace({ path: "/" });
-      document.location.href = "/";
     },
   },
 };
