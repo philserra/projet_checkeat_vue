@@ -4,14 +4,11 @@
     class="h-screen w-screen flex justify-center align-center bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div
-      class="px-4 w-full md:px-10 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg"
-    >
+      class="px-4 w-full md:px-10 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg">
       <div
-        class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden"
-      >
+        class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden">
         <div class="w-full px-5 md:px-10">
           <div class="flex justify-center">
             <h2 class="titleRegister text-red-600 text-2xl p-2 font-black">
@@ -32,8 +29,7 @@
                     id="name"
                     v-model="name"
                     placeholder="Nom du restaurant"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -48,8 +44,7 @@
                     id="adress"
                     v-model="adress"
                     placeholder="Adresse"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -64,8 +59,7 @@
                     id="zip"
                     v-model="zip"
                     placeholder="Code postale"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -80,8 +74,7 @@
                     id="city"
                     v-model="city"
                     placeholder="Ville"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -96,8 +89,7 @@
                     id="tel"
                     v-model="tel"
                     placeholder="Téléphone"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -112,8 +104,7 @@
                     id="email"
                     v-model="email"
                     placeholder="Email"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -128,8 +119,7 @@
                     id="open"
                     v-model="open"
                     placeholder="Heure d'ouverture"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -144,8 +134,7 @@
                     id="closed"
                     v-model="closed"
                     placeholder="Heure de fermeture"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -160,8 +149,7 @@
                     id="capacity"
                     v-model="capacity"
                     placeholder="Nombre de tables"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -169,8 +157,7 @@
                 <input
                   class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-red-700 text-white rounded-lg px-3 py-3 font-semibold"
                   type="submit"
-                  value="Ajouter"
-                />
+                  value="Ajouter" />
               </div>
             </form>
           </div>
@@ -216,7 +203,7 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/restaurateurs/profile",
+      "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs/profile",
       options
     );
 
@@ -249,7 +236,7 @@ export default {
       // FETCH pour envoyé la requête sur l'API
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/restaurants",
+        "https://checkeat-api.osc-fr1.scalingo.io/api/restaurants",
         options
       );
 

@@ -3,18 +3,15 @@
     class="h-screen w-screen flex justify-center align-center pt-1 bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div
-      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg"
-    >
+      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg">
       <div class="text-center m-3">
         <p class="text-2xl text-red-600 font-black">Facturation</p>
       </div>
       <div class="flex justify-center pt-16">
         <div
-          class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 w-full max-w-screen-lg"
-        >
+          class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 w-full max-w-screen-lg">
           <div class="lg:col-span-2">
             <h2 class="text-lg font-black text-red-600">
               Choisissez votre méthode de réglement
@@ -23,16 +20,14 @@
               <div class="flex items-center px-8 py-5">
                 <input
                   class="appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-red-600 ring-opacity-100"
-                  type="radio"
-                />
+                  type="radio" />
                 <label class="text-sm font-medium ml-4">PayPal</label>
               </div>
               <div class="border-t">
                 <div class="flex items-center px-8 py-5">
                   <input
                     class="appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-red-600 ring-opacity-100 bg-red-600"
-                    type="radio"
-                  />
+                    type="radio" />
                   <label class="text-sm font-medium ml-4"
                     >Carte de crédit</label
                   >
@@ -45,8 +40,7 @@
                     <input
                       class="flex items-center h-10 border border-red-600 mt-1 rounded px-4 w-full text-sm"
                       type="text"
-                      placeholder="0000 0000 0000 0000"
-                    />
+                      placeholder="0000 0000 0000 0000" />
                   </div>
                   <div class="">
                     <label class="text-xs font-semibold" for="cardNumber"
@@ -55,8 +49,7 @@
                     <input
                       class="flex items-center h-10 border border-red-600 mt-1 rounded px-4 w-full text-sm"
                       type="text"
-                      placeholder="MM/YY"
-                    />
+                      placeholder="MM/YY" />
                   </div>
                   <div class="">
                     <label class="text-xs font-semibold" for="cardNumber"
@@ -65,8 +58,7 @@
                     <input
                       class="flex items-center h-10 border border-red-600 mt-1 rounded px-4 w-full text-sm"
                       type="password"
-                      placeholder="..."
-                    />
+                      placeholder="..." />
                   </div>
                 </div>
               </div>
@@ -79,8 +71,7 @@
                 <div
                   class="flex items-end"
                   v-for="elem in orderedpayment"
-                  :key="elem.id"
-                >
+                  :key="elem.id">
                   <span class="text-red-600">{{ elem.name }}</span>
 
                   <span class="text-sm ml-auto font-semibold pr-1">{{
@@ -104,8 +95,7 @@
               <div class="flex flex-col px-8 pt-4">
                 <button
                   @click="validateOrder"
-                  class="flex items-center justify-center bg-red-600 text-sm font-black w-full h-10 rounded text-black hover:bg-red-700"
-                >
+                  class="flex items-center justify-center bg-red-600 text-sm font-black w-full h-10 rounded text-black hover:bg-red-700">
                   Valider le paiement
                 </button>
                 <button class="text-xs text-red-600 mt-3 underline">
@@ -143,7 +133,7 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/payment/" + idCommand,
+      "https://checkeat-api.osc-fr1.scalingo.io/api/payment/" + idCommand,
       options
     );
 

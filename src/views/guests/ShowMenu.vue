@@ -3,8 +3,7 @@
     class="min-h-screen bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div class="container mx-auto py-10">
       <div class="flex shadow-md">
         <div class="w-3/4 bg-black px-8 bg-opacity-75 py-10 rounded-lg">
@@ -16,8 +15,7 @@
 
           <ul>
             <div
-              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-300 ease-out rounded-tl-lg rounded-tr-lg"
-            >
+              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-300 ease-out rounded-tl-lg rounded-tr-lg">
               <div class="p-2">
                 <h2 class="text-xl font-black text-red-700 underline">
                   Entrées
@@ -28,14 +26,12 @@
                   <div class="w-48 pl-2 justify-between inline-block">
                     <button
                       @click="addEntree(elem.name, elem.priceTtc, elem.id)"
-                      class="text-sm font-black md:text-lg text-gray-900 border-solid border-red-600 hover:scale-110 hover:text-red-600 transition duration-300"
-                    >
+                      class="text-sm font-black md:text-lg text-gray-900 border-solid border-red-600 hover:scale-110 hover:text-red-600 transition duration-300">
                       {{ elem.name }}
                     </button>
                   </div>
                   <div
-                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
-                  ></div>
+                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"></div>
                   <div class="inline-block">
                     <span class="text-lg font-black md:text-lg text-gray-900">
                       {{ elem.priceTtc }} €
@@ -46,8 +42,7 @@
             </div>
 
             <div
-              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out"
-            >
+              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out">
               <div class="p-2">
                 <h2 class="text-xl font-black text-red-700 underline">Plats</h2>
               </div>
@@ -56,18 +51,15 @@
                   <div class="w-48 pl-2 justify-between inline-block">
                     <button
                       class="inline-block text-sm md:text-lg text-gray-900"
-                      @click="addPlat(elem.name, elem.priceTtc, elem.id)"
-                    >
+                      @click="addPlat(elem.name, elem.priceTtc, elem.id)">
                       <span
-                        class="inline-block text-gray-900 font-bold hover:scale-110 hover:text-red-600 transition duration-300"
-                      >
+                        class="inline-block text-gray-900 font-bold hover:scale-110 hover:text-red-600 transition duration-300">
                         {{ elem.name }}
                       </span>
                     </button>
                   </div>
                   <div
-                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
-                  ></div>
+                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"></div>
                   <div class="inline-block">
                     <span class="text-lg font-black md:text-lg text-gray-900"
                       >{{ elem.priceTtc }} €
@@ -78,8 +70,7 @@
             </div>
 
             <div
-              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out"
-            >
+              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out">
               <div class="p-2">
                 <h2 class="text-xl font-black text-red-700 underline">
                   Desserts
@@ -90,8 +81,7 @@
                   <div class="w-48 pl-2 justify-between inline-block">
                     <button
                       class="inline-block text-lg md:text-lg text-gray-900"
-                      @click="addDessert(elem.name, elem.priceTtc, elem.id)"
-                    >
+                      @click="addDessert(elem.name, elem.priceTtc, elem.id)">
                       <span
                         class="inline-block text-gray-800 font-bold hover:scale-110 hover:text-red-600 transition duration-300"
                         >{{ elem.name }}
@@ -99,8 +89,7 @@
                     </button>
                   </div>
                   <div
-                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
-                  ></div>
+                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"></div>
 
                   <div class="inline-block">
                     <span
@@ -113,8 +102,7 @@
             </div>
 
             <div
-              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out rounded-bl-lg rounded-br-lg"
-            >
+              class="w-full dark:bg-gray-300 dark:bg-opacity-90 pl-2 my-6 border-b pb-2 shadow-2xl hover:scale-105 transition duration-150 ease-out rounded-bl-lg rounded-br-lg">
               <div class="p-2">
                 <h2 class="text-xl font-black text-red-700 underline">
                   Boissons
@@ -125,8 +113,7 @@
                   <div class="w-48 pl-2 justify-between inline-block">
                     <button
                       class="inline-block text-lg font-black md:text-lg text-gray-900"
-                      @click="addBoissons(elem.name, elem.priceTtc, elem.id)"
-                    >
+                      @click="addBoissons(elem.name, elem.priceTtc, elem.id)">
                       <span
                         class="inline-block text-gray-900 font-bold hover:scale-110 hover:text-red-600 transition duration-300"
                         >{{ elem.name }}
@@ -134,8 +121,7 @@
                     </button>
                   </div>
                   <div
-                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"
-                  ></div>
+                    class="w-4/6 mx-4 inline-block border-b border-dashed border-red-600"></div>
                   <div class="inline-block">
                     <span
                       class="inline-block text-lg font-black md:text-lg text-gray-900"
@@ -150,11 +136,9 @@
 
         <div
           id="summary"
-          class="w-1/4 px-8 py-10 rounded-lg bg-gray-300 bg-opacity-90"
-        >
+          class="w-1/4 px-8 py-10 rounded-lg bg-gray-300 bg-opacity-90">
           <h1
-            class="font-semibold text-black text-center text-3xl border-b border-red-600 pb-8"
-          >
+            class="font-semibold text-black text-center text-3xl border-b border-red-600 pb-8">
             Votre commande
           </h1>
           <div v-for="(elem, index) in command" :key="elem.id">
@@ -165,24 +149,21 @@
               >
               <button
                 class="font-semibold text-sm"
-                @click="deleteAddition(index)"
-              >
+                @click="deleteAddition(index)">
                 <svg
                   class="inline-block pb-1"
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
                   height="18"
                   preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     fill="none"
                     stroke="#dc2626"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M4 6h16l-1.58 14.22A2 2 0 0 1 16.432 22H7.568a2 2 0 0 1-1.988-1.78L4 6Zm3.345-2.853A2 2 0 0 1 9.154 2h5.692a2 2 0 0 1 1.81 1.147L18 6H6l1.345-2.853ZM2 6h20m-12 5v5m4-5v5"
-                  />
+                    d="M4 6h16l-1.58 14.22A2 2 0 0 1 16.432 22H7.568a2 2 0 0 1-1.988-1.78L4 6Zm3.345-2.853A2 2 0 0 1 9.154 2h5.692a2 2 0 0 1 1.81 1.147L18 6H6l1.345-2.853ZM2 6h20m-12 5v5m4-5v5" />
                 </svg>
               </button>
             </div>
@@ -195,8 +176,7 @@
             </div>
             <button
               class="dark:bg-red-600 font-bold hover:bg-red-700 py-3 text-lg text-black uppercase w-full rounded-lg"
-              @click="ordered(status)"
-            >
+              @click="ordered(status)">
               Commander
             </button>
             <h1 class="text-xl font-black" v-if="message">
@@ -242,7 +222,8 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/guestmenu/" + this.id_restaurant,
+      "https://checkeat-api.osc-fr1.scalingo.io/api/guestmenu/" +
+        this.id_restaurant,
       options
     );
 
@@ -290,7 +271,7 @@ export default {
         };
         // FETCH pour envoyé la requête sur l'API
         const response = await fetch(
-          "http://127.0.0.1:8000/api/ordered",
+          "https://checkeat-api.osc-fr1.scalingo.io/api/ordered",
           options
         );
         const data = await response.json();

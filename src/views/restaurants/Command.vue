@@ -3,11 +3,9 @@
     class="min-h-screen w-screen flex justify-center align-center pt-1 bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div
-      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg"
-    >
+      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg">
       <div class="text-center m-4">
         <h1 class="text-red-600 text-2xl font-black">Commandes des clients</h1>
       </div>
@@ -65,11 +63,9 @@
       </div> -->
       <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
         <table
-          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-        >
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead
-            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
-          >
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black">
             <tr>
               <th scope="col" class="py-3 px-6">Numero de commande</th>
               <th scope="col" class="py-3 px-6">Nom du Produit</th>
@@ -85,12 +81,10 @@
           <tbody v-for="(elem, key) in ordered" :key="elem.id">
             <tr
               v-if="elem.status === 'En cours'"
-              class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
-            >
+              class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900">
               <td
                 scope="row"
-                class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
-              >
+                class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white">
                 {{ elem.id_command }}
               </td>
               <td class="py-4 px-6 text-red-600 font-black italic text-base">
@@ -133,8 +127,7 @@
               <td>
                 <button
                   class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                  @click="erase(key, elem.id)"
-                >
+                  @click="erase(key, elem.id)">
                   Supprimer
                 </button>
               </td>
@@ -197,7 +190,10 @@ export default {
       },
     };
 
-    const response = await fetch("http://127.0.0.1:8000/api/ordered", options);
+    const response = await fetch(
+      "https://checkeat-api.osc-fr1.scalingo.io/api/ordered",
+      options
+    );
 
     const data = await response.json();
     this.ordered = data.ordered;
@@ -220,7 +216,10 @@ export default {
         }),
       };
 
-      const rep = await fetch("http://127.0.0.1:8000/api/ordered/" + id, param);
+      const rep = await fetch(
+        "https://checkeat-api.osc-fr1.scalingo.io/api/ordered/" + id,
+        param
+      );
     },
   },
 };

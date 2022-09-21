@@ -4,14 +4,11 @@
     class="min-h-screen w-screen flex justify-center align-center pt-1 bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div
-      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg"
-    >
+      class="px-4 w-full m-6 md:px-10 py-4 md:py-7 bg-black bg-opacity-75 rounded-tl-lg rounded-tr-lg">
       <div
-        class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden"
-      >
+        class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden">
         <div class="w-full py-10 px-5 md:px-10">
           <div class="text-center mb-10">
             <h2 class="titleRegister text-red-600 text-2xl p-2 font-black">
@@ -32,8 +29,7 @@
                       name="category"
                       v-model="category"
                       id="category"
-                      class="categoryRegister shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    >
+                      class="categoryRegister shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                       <option value="entree">Entrée</option>
                       <option value="plat">Plat</option>
                       <option value="dessert">Dessert</option>
@@ -53,8 +49,7 @@
                       id="name"
                       v-model="name"
                       placeholder="Nom du plat"
-                      required
-                    />
+                      required />
                   </div>
                 </div>
 
@@ -69,8 +64,7 @@
                       id="priceHt"
                       v-model="priceHt"
                       placeholder="Prix HT"
-                      required
-                    />
+                      required />
                   </div>
                 </div>
 
@@ -83,8 +77,7 @@
                       name="tva"
                       v-model="tva"
                       id="tva"
-                      class="tvaRegister shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    >
+                      class="tvaRegister shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                       <option value="0">0%</option>
                       <option value="5.5">5.5%</option>
                       <option value="10">10%</option>
@@ -98,8 +91,7 @@
                     class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-red-700 text-white rounded-lg px-3 py-3 font-semibold"
                     type="submit"
                     value="Valider"
-                    @click="register"
-                  />
+                    @click="register" />
                 </div>
               </form>
             </div>
@@ -113,11 +105,9 @@
           <li>
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
               <table
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-              >
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead
-                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
-                >
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black">
                   <tr>
                     <th scope="col" class="py-3 px-6">Categorie</th>
                     <th scope="col" class="py-3 px-6">Nom du Produit</th>
@@ -135,17 +125,14 @@
                 <tbody v-for="task in tasks" :key="task.id">
                   <tr
                     v-if="task.category === 'entree'"
-                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
-                  >
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900">
                     <td
                       scope="row"
-                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
-                    >
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white">
                       {{ task.category }}
                     </td>
                     <td
-                      class="py-4 px-6 text-red-600 font-black italic text-base"
-                    >
+                      class="py-4 px-6 text-red-600 font-black italic text-base">
                       {{ task.name }}
                     </td>
                     <td class="py-4 px-6">{{ task.priceHt }} €</td>
@@ -163,8 +150,7 @@
                     <td>
                       <button
                         class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                        @click="deleteMenu(task.id)"
-                      >
+                        @click="deleteMenu(task.id)">
                         Supprimer
                       </button>
                     </td>
@@ -175,11 +161,9 @@
 
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
               <table
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-              >
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead
-                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
-                >
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black">
                   <tr>
                     <th scope="col" class="py-3 px-6">Categorie</th>
                     <th scope="col" class="py-3 px-6">Nom du Produit</th>
@@ -197,17 +181,14 @@
                 <tbody v-for="task in tasks" :key="task.id">
                   <tr
                     v-if="task.category === 'plat'"
-                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
-                  >
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900">
                     <td
                       scope="row"
-                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
-                    >
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white">
                       {{ task.category }}
                     </td>
                     <td
-                      class="py-4 px-6 text-red-600 font-black italic text-base"
-                    >
+                      class="py-4 px-6 text-red-600 font-black italic text-base">
                       {{ task.name }}
                     </td>
                     <td class="py-4 px-6">{{ task.priceHt }} €</td>
@@ -225,8 +206,7 @@
                     <td>
                       <button
                         class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                        @click="deleteMenu(task.id)"
-                      >
+                        @click="deleteMenu(task.id)">
                         Supprimer
                       </button>
                     </td>
@@ -237,11 +217,9 @@
 
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
               <table
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-              >
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead
-                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
-                >
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black">
                   <tr>
                     <th scope="col" class="py-3 px-6">Categorie</th>
                     <th scope="col" class="py-3 px-6">Nom du Produit</th>
@@ -259,17 +237,14 @@
                 <tbody v-for="task in tasks" :key="task.id">
                   <tr
                     v-if="task.category === 'dessert'"
-                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
-                  >
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900">
                     <td
                       scope="row"
-                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
-                    >
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white">
                       {{ task.category }}
                     </td>
                     <td
-                      class="py-4 px-6 text-red-600 font-black italic text-base"
-                    >
+                      class="py-4 px-6 text-red-600 font-black italic text-base">
                       {{ task.name }}
                     </td>
                     <td class="py-4 px-6">{{ task.priceHt }} €</td>
@@ -287,8 +262,7 @@
                     <td>
                       <button
                         class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                        @click="deleteMenu(task.id)"
-                      >
+                        @click="deleteMenu(task.id)">
                         Supprimer
                       </button>
                     </td>
@@ -299,11 +273,9 @@
 
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
               <table
-                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-              >
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead
-                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
-                >
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black">
                   <tr>
                     <th scope="col" class="py-3 px-6">Categorie</th>
                     <th scope="col" class="py-3 px-6">Nom du Produit</th>
@@ -321,17 +293,14 @@
                 <tbody v-for="task in tasks" :key="task.id">
                   <tr
                     v-if="task.category === 'boisson'"
-                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
-                  >
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900">
                     <td
                       scope="row"
-                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
-                    >
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white">
                       {{ task.category }}
                     </td>
                     <td
-                      class="py-4 px-6 text-red-600 font-black italic text-base"
-                    >
+                      class="py-4 px-6 text-red-600 font-black italic text-base">
                       {{ task.name }}
                     </td>
                     <td class="py-4 px-6">{{ task.priceHt }} €</td>
@@ -349,8 +318,7 @@
                     <td>
                       <button
                         class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                        @click="deleteMenu(task.id)"
-                      >
+                        @click="deleteMenu(task.id)">
                         Supprimer
                       </button>
                     </td>
@@ -395,7 +363,8 @@ export default {
         },
       },
       response = await fetch(
-        "http://127.0.0.1:8000/api/menu/" + this.id_restaurant,
+        "https://checkeat-api.osc-fr1.scalingo.io/api/menu/" +
+          this.id_restaurant,
         options
       );
 
@@ -424,7 +393,10 @@ export default {
         }),
       };
       // FETCH pour envoyé la requête sur l'API
-      const response = await fetch("http://127.0.0.1:8000/api/menu", options);
+      const response = await fetch(
+        "https://checkeat-api.osc-fr1.scalingo.io/api/menu",
+        options
+      );
       const data = await response.json();
       window.location.reload();
     },
@@ -439,7 +411,7 @@ export default {
         },
       };
       const response = await fetch(
-        "http://127.0.0.1:8000/api/menu/" + id,
+        "https://checkeat-api.osc-fr1.scalingo.io/api/menu/" + id,
         options
       );
       const data = await response.json();

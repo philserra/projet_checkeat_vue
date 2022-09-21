@@ -24,12 +24,15 @@ export default {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
-      const response = await fetch("http://127.0.0.1:8000/api/logout", options);
+      const response = await fetch(
+        "https://checkeat-api.osc-fr1.scalingo.io/api/logout",
+        options
+      );
 
       const data = await response.json();
 
       localStorage.removeItem("token", data.access_token);
-      location = "http://localhost:8080/";
+      location = "https://checkeat.osc-fr1.scalingo.io/";
       // this.$router.replace({ path: "/" });
       window.location.reload();
     },
