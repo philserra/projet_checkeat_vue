@@ -172,7 +172,8 @@
 </template>
 
 <script>
-import api from "./router-api.js";
+import api from "@/main";
+
 export default {
   name: "Create",
   components: {},
