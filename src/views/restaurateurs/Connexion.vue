@@ -207,7 +207,7 @@ export default {
         }),
       };
       const response = await fetch(
-        "https://checkeat-api.osc-fr1.scalingo.io/api/login/",
+        "https://checkeat-api.osc-fr1.scalingo.io/api/login",
         options
       );
 
@@ -216,7 +216,7 @@ export default {
         this.token = data.access_token;
         localStorage.setItem("token", data.access_token);
         location =
-          "https://checkeat.osc-fr1.scalingo.io/restaurateurs/dashboard/";
+          "https://checkeat.osc-fr1.scalingo.io/restaurateurs/dashboard";
         // this.$router.push("/restaurateurs/dashboard");
       }
     },

@@ -378,11 +378,12 @@
 
 <script>
 import "../assets/tailwind.css";
-import Connexion from "../views/restaurateurs/Connexion.vue";
+import Connexion from "@/views/restaurateurs/Connexion.vue";
 const token = localStorage.getItem("token");
 
 export default {
   name: "navbar",
+  components: { Connexion },
   data() {
     return {
       token: token,
@@ -403,7 +404,7 @@ export default {
     };
 
     const response = await fetch(
-      "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs/",
+      "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs",
       options
     );
 
@@ -426,7 +427,7 @@ export default {
         },
       };
       const response = await fetch(
-        "https://checkeat-api.osc-fr1.scalingo.io/api/logout/",
+        "https://checkeat-api.osc-fr1.scalingo.io/api/logout",
         options
       );
 
