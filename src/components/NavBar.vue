@@ -403,7 +403,7 @@ export default {
     };
 
     const response = await fetch(
-      "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs",
+      "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs/",
       options
     );
 
@@ -426,7 +426,7 @@ export default {
         },
       };
       const response = await fetch(
-        "https://checkeat-api.osc-fr1.scalingo.io/api/logout",
+        "https://checkeat-api.osc-fr1.scalingo.io/api/logout/",
         options
       );
 
