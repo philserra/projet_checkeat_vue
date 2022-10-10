@@ -372,8 +372,8 @@
         </div>
       </div>
     </nav>
-    <router-view />
   </div>
+  <router-view />
 </template>
 
 <script>
