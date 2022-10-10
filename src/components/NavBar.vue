@@ -372,8 +372,8 @@
         </div>
       </div>
     </nav>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <script>
@@ -405,7 +405,7 @@ export default {
 
     const response = await fetch(
       "https://checkeat-api.osc-fr1.scalingo.io/api/restaurateurs",
-      options
+      options,
     );
 
     const data = await response.json();
@@ -426,7 +426,7 @@ export default {
       };
       const response = await fetch(
         "https://checkeat-api.osc-fr1.scalingo.io/api/logout",
-        options
+        options,
       );
 
       const data = await response.json();
